@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+
+        $(function(){
+            $("div:contains('jquery')").css("background","navy");
+        });
+
+        //div들 중 css라는 문자열을 포함하고 있는 요소에 배경을 분홍색으로 적용하세요.
+
+        $(function(){
+            $("div:contains('css')").css("background","pink");
+        });
+
+        $(function(){
+            $("td:eq(4)").css("background","gray");
+        });
+
+        
+        $(function(){
+            //&lt; : > td들중 4번 인덱스를 초과하는 요소 검색
+            $("td:gt(4)").css("background","pink");
+
+            //&gt; : < td들 중 index 4보다 미만인 요소들 검색
+            $("td:lt(4)").css("background","orange");
+
+
+            //div들 중 자식으로 클래스 .h1을 가지고 있는 요소들 검색
+            $("div:has(.h1)").css("background","pink");
+
+            //div의 모든 자식요소들 중 클래스가 h1이 아닌 요소들 검색
+            $("div>*:not(.h1)").css("color","red");
+        });
+
+        
+    </script>
+</head>
+<body>
+    <div>html study</div>
+    <div>css study</div>
+    <div>javascript study</div>
+    <div>jquery study</div>
+
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <h1>has h1</h1>
+    </div>
+    <div>
+        <h2 class="h1">has h2</h2>
+    </div>
+</body>
+</html>

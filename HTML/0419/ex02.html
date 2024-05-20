@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class 셀렉터 실습하기</title>
+    <style>
+        /*
+        태그 선택자를 활용하여 h2와 h3태그의 글자색을 보라색으로 변경하세요.*/
+        .heading { color:purple; }
+        .contents { color:pink; }
+        ul.contents, p.contents { color:grey; }
+        .contents.list { color:lightgrey;}
+    </style>
+</head>
+<body>
+    <h2 class="heading">class 셀렉터다루기</h2>
+    <h3 class="heading">class린?</h3>
+    <div class="contents">html 태그들을 그룹지어 다룰수 있는 속성을 의미한다.</div>
+    <h3 class="heading">class셀렉터란?</h3>
+    <div class="contents">
+        html 태그들 중 class 속성값이 같은 요소들을 찾아 스타일시트를 적용하는 셀렉터를 의미한다.
+    </div>
+    <p class="contents list">
+        * 글로벌 속성 목록
+    </p>
+    <ul class="contents list">
+        <li>id</li>
+        <li>title</li>
+        <li>class</li>
+    </ul>
+    <ul class="list">
+        <li>id</li>
+        <li>title</li>
+        <li>class</li>
+    </ul>
+    <!-- class="contents" 라는 속성을 활용하여 heading을 제외한 html 요소들의 텍스트 색상을 분홍색으로 변경하세요.-->
+</body>
+</html>

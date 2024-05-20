@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 객체의 메소드 활용</title>
+    <script>
+        function pr(msg, arr){
+            document.write(msg +arr.toString()+ "<br>");
+        }
+    </script>
+</head>
+<body>
+    <script>
+        let a = new Array("황", "김", "이");
+        
+        let b = new Array("박");
+        let c;
+
+        pr("배열 a =", a);
+        pr("배열 b =", b);
+        
+        document.write("<hr>");
+
+        c = a.concat(b);
+        pr("c = a.concat(b)후 c = ", c); // 황,김,이,박
+        pr("c = a.concat(b)후 a = ", a);
+
+        document.write("---------------------------------------------<br>");
+
+        c = a.join("##");
+        pr("c = a.join() 후 c = ", c);
+        pr("c = a.join() 후 a =",  a);
+
+        document.write("---------------------------------------------<br>");
+
+        c = a.reverse();
+        
+        pr("c = a.reverse() 후 c=", c); //리버스 하면 계속해서 바뀌어서 적용
+        pr("c = a.reverse() 후 c=", a);
+
+        document.write("---------------------------------------------<br>");
+        c = a.slice(0, 2);
+        pr("c= a.slice(1,2) 후 c =", c);
+        pr("c= a.slice(1,2) 후 a =", a);
+
+        document.write("---------------------------------------------<br>");
+        document.write(a +"<br>");
+        c = a.sort();
+        pr("c= a.sort() 후 c = ", c);
+        pr("c= a.sort() 후 a = ", a);
+
+        document.write("---------------------------------------------<br>");
+
+        document.write(a +"<br>");
+        c = a.toString();
+
+        document.write("a.toString() :" + c);
+
+        document.write("---------------------------------------------<br>");
+        let num1 = [1,2,3,4,56];
+
+        document.write(num1 + "<br>");
+        numStr = num1.toString();
+        document.write(numStr);
+
+    </script>
+</body>
+</html>

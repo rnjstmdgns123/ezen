@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="t01" onkeydown="downfn(this,event)"  onkeyup="upfn(this,event)"><br>
+    <!-- keypress 이벤트는 특수키에서는 발생 x numberpad 기능-->
+    <!--onkeypress="alert('press 이벤트 실행!'); return false;"-->
+    <script>
+        function upfn(obj,e){
+            /*
+            키보드가 눌렀다 올라올 때 발생하며 주로 키보드 입력후 즉시
+            처리해야하는 실행문이 있는 경우 사용한다.
+            */
+            console.log(obj.value);
+            let reg = /[^0-9]/g; //0~9가 아닌 모든 문자를 검색
+
+            obj.value = obj.value.replaceAll(reg,"");
+        }
+
+        function downfn(obj,e){ //keydown 이벤트는 키보드 모든 키에 발생
+            console.log("키보드 눌림!!");
+            console.log(e.code); //눌린 키의 코드값 반환
+            console.log(e.key); //한글문자는 제외 눌린 키보드 문자열 반환
+            console.log(e.altKey); //alt키 누름 여부 반환
+            console.log(e.ctrlKey); //ctrl키 누름 여부 반환
+            console.log(e.shiftKey); //shift키 누름여부 반환
+            console.log(e.keyCode); //키보드가 가지고 있는 숫자 코드값 반환(한글은 229)
+        }
+
+    </script>
+
+
+    <form onsubmit="alert('로그인합니다.'); return false;">
+        아이디 : <input type="text" name="id">
+        <br>
+        비밀번호 : <input type="password" name="password">
+        <br>
+        <input type="submit" value="로그인">
+
+
+    </form>
+    <!--
+        onsubmit은 submut 버튼을 클릭하며 발생하지만
+        이벤트 리스너는 form 태그에게 작성한다.
+        
+        제출전 입력값의 유효성 검사는 submit 버튼의 onclick=return false;
+        또는 form 태그의 onsubmit=return false;를 사용하면 된다.
+
+    -->
+</body>
+</html>

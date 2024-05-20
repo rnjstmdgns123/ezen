@@ -1,0 +1,4 @@
+body { background-color: aqua;}
+h3 { color :green}
+#center > strong { color:blue; background-color: yellow; text-align: center;}
+.indent > p > strong { color:red; }

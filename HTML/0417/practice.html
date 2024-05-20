@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <header>
+        <h3>회원가입</h3>
+        <hr>
+    </header>
+    <section>
+        <form>
+            <fieldset>
+                <table>
+                    <legend>기본정보</legend>
+                    <tr>
+                        <th align="right">*가입일:</th>
+                        <td><input type="text" value="2022-02-07" disabled><br></td>
+                    </tr>
+                    <tr>
+                        <th align="right">*아이디:</th>
+                        <td><input type="text" placeholder="아이디를 입력하세요"> <input type="button" value="ID중복확인"><br></td>
+                    </tr>
+                    <tr>
+                        <th align="right">*이름:</th>
+                        <td><input type="text" placeholder="이름을 입력하세요"><br></td>
+                    </tr>
+                    <tr>
+                        <th align="right">*비밀번호:</th>
+                        <td><input type="text" placeholder="비밀번호를 입력하세요"><br></td>
+                    </tr>
+                    <tr>
+                        <th align="right">*비밀번호 확인:</th>
+                        <td><input type="text" placeholder="비밀번호를 다시 입력하세요."><br></td>
+                    </tr>
+                    <tr>
+                        <th align="right">*이메일 :</th>
+                        <td><input type="text" placeholder="이메일을 입력하세요."><br></td>
+                    </tr><tr>
+                        <th align="right">광고 수신동의:</th>
+                        <td><input type="checkbox" checked>동의<br></td>
+                    </tr><tr>
+                        <th align="right">주소:</th>
+                        <td><input type="text"> <input type="button" value="주소찾기"><br></td>
+                        </tr>
+                    </tr><tr>
+                        <th align="right">성별:</th>
+                        <td><input type="radio" name="gender"> 여<input type="radio" name="gender"><br></td>
+                    </tr>
+                    </tr>
+                        <th align="right">생년월일:</th>
+                        <td><input type="date"><br></td>
+                    </tr>
+                    </tr>
+                        <th align="right">연락처 :</th>
+                        <td>
+                            <select name="" id="">
+                                <option value="010">010</option>
+                                <option value="010">011</option>
+                                <option value="010">012</option>
+                            </select>
+                            -
+                            <input type="text" maxlength="4">
+                            -
+                            <input type="text" maxlength="4">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>부가정보</legend>
+                <table>
+                    <tr>
+                        <th align="right">관심분야:</th>
+                        <td><input type="checkbox" value="java" name="programmingL">java 
+                            <input type="checkbox" value="html" name="programmingL">html
+                            <input type="checkbox" value="database" name="programmingL">database
+                            <input type="checkbox" value="jsp" name="programmingL">jsp
+                            <input type="checkbox" value="javascript" name="programmingL">javascript
+                            <input type="checkbox" value="css" name="programmingL">css
+                            <input type="checkbox" value="android" name="programmingL">android
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="right"><br>소개글 : </th>
+                        <td><textarea name="" id="" cols="60" rows="5"></textarea></td>
+                    </tr>
+                </table>
+            </fieldset>
+            <br>
+            <input type="button" value="취소">
+            <input type="submit" value="회원가입">
+        </form>
+    </section>
+    <hr>
+    <footer>
+        회원가입
+    </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //자바스크립트 전역함수 다루기
+        //1.paresInt(문자열): 매개값 문자열을 정수로 변환
+        //만약 문자열에 정수 뒤 소수점 또는 문자열이 존재
+        //한다면 버리고 정수만 반환한다.
+        let result;
+        result = parseInt("10hhhhh10");
+        console.log(result);
+        console.log(typeof result);
+
+        //2. parseFloat(문자열) : 매개값 문자열을 실수로 변환
+        //만약 문자열에서 숫자 뒤로 다른 문자가 붙는 경우 
+        //버리고 실수로 반환한다.
+        result = parseFloat("3.14asdasd");
+
+        console.log(result);
+        console.log(typeof result);
+
+        //3. Number(값) : 값을 숫자로 변환
+        // 숫자로 변환할 수 없는 경우 NaN 반환
+
+        result = Number("10");
+        console.log(result);
+        console.log(typeof result);
+
+        //4. isNaN(변수) : 변수의 값이 NaN이면 true반환
+
+        let result2 = isNaN(result);
+        console.log(result2);
+
+
+        //값을 0.0 또는 0으로 나누게 되면
+        //부동소수점 때문에 명확한 0이 아닌 0.00000.....1
+        //과 같은 애매한 값으로 연산하게 되어
+        //무한의 결과인 Infinity 값이 발생하게 된다.
+        let sample = 10/0.0;
+        //이때, isFinite()를 사용하면 무한값인지 아닌지
+        //알 수 있다. Infinity이면 false 반환
+        console.log(isFinite(sample));
+
+    </script>
+</body>
+</html>

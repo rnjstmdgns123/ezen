@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+<body>
+    <script>
+
+        function big (a, b){
+
+            let result;
+
+            parseInt(a);
+            parseInt(b);
+
+            if(a>b){
+                result = a;
+            }else if(a<b){
+                result = b;
+            }else{
+                result = "잘못 입력하셨습니다."
+            }
+            return result;
+        }
+
+        let b = big("1", "12");
+        document.write("큰수=" + b);
+    </script>
+</body>
+</html>

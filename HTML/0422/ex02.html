@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>셀렉터 만들기</title>
+    <style>
+
+    * { background-color:skyblue; }
+
+    h3 { color :rosybrown; }
+    h3 > span { color:red; }
+    
+    body > span { background-color:yellow; }
+    .box1 ul,li { background-color:pink;}
+    
+    #score { color:red; }
+
+    
+
+    </style>
+</head>
+<body>
+    <h3><span>W</span>eb Programming</h3>
+    <hr>
+    2학기 <span>학습 내용</span>입니다.
+    <div class="box1">
+        <ul style="color:red;">
+            <li><span style="color:yellowgreen; background-color:pink;">HTML5</span></li>
+            <li><div style="color:blue; background-color:green;">CSS</div></li>
+            <li style="color:red;">JAVASCRIPT</li>
+        </ul>
+    </div>
+    <div id="score">
+        60점 이하는 F
+    </div>
+</body>
+</html>

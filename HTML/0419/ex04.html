@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조합 셀렉터 다루기</title>
+    <style>
+        body > h2 { color:red; }
+        div.top > h2 { color:purple; }
+        .description > h2 { color:orange; }
+        /*
+        조합 셀렉터란
+        두개 이상의 셀렉터를 조합하여 요소를 선택할 때 사용하는
+        셀렉터를 의미한다. 이때 셀렉터는 모든 셀렉터가 기준이 될 수 있다.
+        */
+
+        /*
+        자손 셀렉터란?
+        - 일치하는 자식과 후손 html 태그를 모두 찾아 css를 적용하는 셀렉터
+        */
+        #top2 h3 { color:purple; }
+        /*
+        아이디가 top2인 요소 안에 선언된 모든 p 태그의 텍스트 색상을 주황색으로 변경하세요.
+        */
+
+        #top2 p { color:orange}
+    </style>
+</head>
+<body>
+    <h2>조합 셀렉터 예제</h2>
+    <div class="top">
+        <h2>자식 셀렉터</h2>
+        <div class="description">
+            <!-- class가 description인 요소의 자식중 h2 요소를 찾아 글자 주황색으로 변경하세요.-->
+            <h2>*설명*</h2>
+            - 기준 셀렉터 바로 안에 선언된 요소를 의미한다.
+            <p>- 나는 div의 후손 h2입니다.</p>
+        </div>
+    </div>
+    <di id="top2">
+        <h3>자손 셀렉터</h3>
+        <div>
+            <h2>자손이란?</h2>
+            <div>
+                - 중첩 구조상 기준 태그 내부 선언된 모든 html태그를 의미한다.
+            </div>
+            <h3>top2의 구조</h3>
+            <dv></dv>
+        </div>
+            <p>
+               -자식 : h3,div
+               -후손 : p, h3, div, p
+            </p>
+    </div>
+</body>
+</html>

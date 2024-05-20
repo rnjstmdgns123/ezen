@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시맨틱태그를 활용한 레이아웃 만들기</title>
+</head>
+<body>
+    <header>
+        <h1>레이아웃 구송하기</h1>
+    </header>
+    <section>
+        <!--h 태그는 웹페이지 제목 태그이며 대제목을 나타내는 h1 태그는
+        레이아웃 시맨틱태그와 사용하면 단 한번만 인식된다
+        이유는 웹페이지의 대제목은 단 하나이기 떄문
+        -->
+        <!-- 레이아웃 태그는 모두 블럭성질-->
+        <nav>
+            하이퍼링크들이 모여있는 영역입니다.<br>
+            메뉴를 구성하는 영역입니다.
+        </nav>
+        <h1>본문입니다.</h1>
+        <!-- 본문안에 절이 여러개 있을 때 article을 사용-->
+        <article>
+            1절
+        </article>
+        <article>
+            2절
+            <br>
+            모든 레이아웃 시맨틱 태그는 블럭 성질을 갖는다.
+            <!-- 아코디언 디자인을 제공하고 있는 시맨틱 태그이며
+            하나의 주제에 대한 여러 설명들을 내포하고 있습니다.-->
+            <details>
+                <summary>Q1.html이란?</summary>
+                <div>
+                    웹페이지 구조를 다루는 언어
+                </div>
+            </details>
+            <details>
+                <summary>Q2.html이란?</summary>
+                <div>
+                    웹 페이지 디자인을 다루는 언어
+                </div>
+            </details>
+            <details>
+                <summary>Q3.html이란?</summary>
+                <div>
+                    웹페이지 동적 제어를 다루는 언어
+                </div>
+            </details>
+        </article>
+    </section>
+    <aside>
+        본문에서 벗어나는 부가 적인 내용을 담는 영역<br>
+        주로 배너 광고 또는 퀵메뉴 영역입니다.
+    </aside>
+    <footer>
+        웹페이지의 꼬릿말 영역으로 주로 저자 정보 등이 위치 합니다.
+    </footer>
+</body>
+</html>

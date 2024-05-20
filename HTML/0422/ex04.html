@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text indent 예제</title>
+    <style>
+        #indent {text-indent:2em;} /* 문단의 첫 문장 들여쓰기 단위 px, em, cm 모두 가능 (주로 em을 많이 사용)*/
+        h3 { text-align: center; width: 300px; text-decoration: line-through; }
+        #decoration a { text-decoration: none; }
+        #decoration a:hover { text-decoration: line-through; }
+
+        #ex4-11 .up {text-indent: 3em;}
+        #ex4-11 .up span {text-decoration: line-through;}
+        #ex4-11 .down strong {text-decoration: overline;}
+    </style>
+</head>
+<body>
+    <h3>text-indent 예제
+    <div>
+        ......
+    </div>
+    </h3>
+    <div id="indent">
+        문단의 첫 들여쓰기를 제어할 때 사용합니다.<br>
+        내용...<br>
+        내용...<br>
+        내용...<br>
+        내용...<br>
+    </div>
+    <div id="decoration">
+        <a href="#">클릭하면 이동합니다.</a>
+    </div>
+    <div id="ex4-11">
+        <!-- 여기에 4-11 예제를 작성해보세요.-->
+
+        <h3 style="text-align:right; text-decoration: none;">텍스트 꾸미기</h3>
+        <hr>
+        <p class="up">HTML의 태그만으로 기존<br>의 워드 프로세서와 같이 들여쓰<br>기, 정렬, 공백, 간격 등과 세밀한<br> <span>텍스트 제어</span>를 할 수 없다.</p>
+        <p class="down">그러나, <strong>스타일 시트</strong>는 이를 가<br>능하게 한다. 들여쓰기, 정렬에<br>대해서 알아본다</p>
+        
+        밑줄이 없는 네이터 링크
+
+
+
+    </div>
+</body>
+</html>

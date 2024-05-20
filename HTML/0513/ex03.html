@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" style="background-color: yellow;"></div>
+    <script>
+        let box = document.getElementById("box");
+        //box 변수에 담긴 dom객체의 backgroundColor 속성 값 출력
+        let backgroundColor = box.style.backgroundColor;
+
+        console.log(backgroundColor);
+
+        //box 요소의 너비값 콘솔에 출력
+        let boxWidth = box.style.width; //인라인 스타일시트만 적용
+
+        console.log(boxWidth);
+
+        //인라인 css 아닌 경우 (getComputedStyle(요소))
+        let style = getComputedStyle(box);
+        console.log(style.width);
+        /*
+        getComputedStyl() 메소드를 사용하여 덩어온 결과는
+        요소에 반영된 모든 css 스타일시트를 객체 형태로 반환한다.
+        */
+
+        //box의 border 속성값 콘솔에 출력하세요.
+        console.log(style.border);
+        console.log(style.backgroundColor);
+    </script>
+
+    <form name="frm" action="경로" method="get">
+        아이디 : <input type="text" name="id">
+        <br>
+        <input type="submit" value="저장">
+    </form>
+    <script>
+        //name이 frm인 form태그 안의 name이 id인 요소의 입력 값 얻어오기
+        let idEle = document.frm.id;
+        console.log(idEle);
+
+    </script>
+
+</body>
+</html>

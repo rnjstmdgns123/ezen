@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function sum(cnt){
+
+            let sum1 = 0;
+
+            for(let i = 0; i<=cnt; i++){
+                
+                sum1 += i;
+            }
+            
+            
+            return sum1;
+            
+
+        }
+
+        let end = prompt("부터 합을 구하고 싶은 숫자를 입력하세요.")
+
+        let result = sum(end);
+        document.write("0~" + end + "까지의 합 :" + result);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 그리자 </title>
+    <style>
+        div {
+            font :normal 24px verdana;
+        }
+
+        .shadow1 { 
+            text-shadow: -5px -5px 5px gray, /*수평 수직 블러 색상 */
+                        0 0 25px blue, 0 0 5px darkblue;
+        }
+        .dropText { 
+            text-shadow: 3px 3px;
+        }
+        .redText{
+            text-shadow: 3px 3px red;
+        }
+
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            box-shadow: 5px 20px 3px -10px gray, 20px 30px 5px -10px lightgray;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h3 class="shadow1">text shadow</h3>
+    <h2> 텍스트 그림자 만들기 </h2>
+    <hr>
+    <div class="dropText">Drop Shwadow</div>
+    <div class="redText">Color Shadow</div>
+    <div class="blurText">Blur Shadow</div>
+    <div class="glowEffect">Glow glowEffect</div>
+    <div class="wordArtEffect">WordArt Effect</div>
+    <div class="threeDeffect">3D Effect</div>
+
+
+    <div class="box1"></div>
+    <button style="cursor:pointer;">button</button>
+
+
+
+</body>
+</html>

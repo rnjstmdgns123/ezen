@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for(let i = 0; i <= 4; i++){
+        //     for(let j = 0; j <= i; j++){
+        //         document.write("*");
+        //     }
+        //     document.write("<br>");
+        // }
+
+
+        for(let cnt = 1; cnt <= 2; cnt++){
+            document.write("<table border='1'>");
+                document.write("<tr>");
+                
+                if(cnt == 1){
+                    document.write("<th>n");
+                    document.write("</th>")
+                }else{
+                    document.write("<th>n<sup>"+ cnt+ "</sup>");
+                    document.write("</th>")
+                }
+                
+                
+            for(let td = 0; td <= 9; td++){
+                
+                if(cnt == 1){
+                    
+                    document.write("<td>" +td);
+                }else{
+                    
+                    document.write("<td>" +td * td);
+                }
+
+                document.write("</td>");
+                document.write("</tr>");
+            }
+            document.write("<br>");
+            document.write("</table>")
+        }
+    </script>
+    <!-- <table border="1">
+        <tr>
+            <th>n</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <th>n<sup>2</sup></th>
+            <td>1</th>
+            <td>1</td>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+        </tr>
+    </table> -->
+
+
+
+</body>
+</html>

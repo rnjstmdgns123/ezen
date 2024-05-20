@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+    for문을 사용하여 사용자에게
+    5번의 숫자를 입력 받습니다.
+    이때 입력한 숫자가 짝수라면
+    합을 구하여 출력합니다.
+
+    */
+
+    let sum = 0;
+    
+    let n;
+    
+    for(let num = 1; num <= 5; num++){
+
+        
+        n = prompt("숫자를 입력해주세요.");
+        
+
+        if( n%2 == 0){
+            n = parseInt(n);
+            sum += n;
+        }
+        
+    }
+    document.write("5번의 숫자중 짝수의 총 합은 :" + sum + "입니다." );
+
+    </script>
+</body>
+</html>

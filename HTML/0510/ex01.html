@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let obj;
+
+        obj = {
+
+            field01 : "값01", 
+            field02 : 10
+        };//일회성 객체 리터널로 생성
+
+        console.log(obj.field01); //객체 필드 값 출력
+
+        obj.field01 = "변경!"; //객체 필드 값 변경
+        console.log(obj.field01);
+        /*
+        생성된 obj의 필드 field02를 콘솔에 출력 후 값을 20으로 변경하세요.
+        */
+
+        console.log(obj.field02);
+        obj.field02 = 20;
+        console.log(obj.field02);
+
+
+        /*
+            사람 객체를 생성합니다. 이때 사람은 이름, 나이, 연락처, 주소, 필드 속성을 가집니다.
+            속성값은 각각 홍길동, 30, 010-1111,1111, 전주 덕진구 입니다.
+        */
+
+        let person;
+
+        person = {
+
+            name : "홍길동",
+            age : 30,
+            phone : "010-1111-1111",
+            adr: "전주 덕진구",
+            info : function(){ //메소드 선언
+                console.log("나의 이름은 " + this.name + "입니다.");
+
+                /*
+                메소드 안에서 객체의 필드에 접근할 때는 this 키워드 사용.
+                */
+            },
+            
+            infoSchool : function(school){
+                console.log(this.name + "의 학교는" + school + "입니다.");
+            }
+            
+        }
+        
+        console.log(person);
+
+        person.info(); //메서드 호출
+        
+        person.infoSchool("이젠");
+        /*
+            계산기 객체를 만드세요.
+            계산기는 4개의 메소드를 가지고 있습니다.
+            더하기 메소드는 매개값 2수를 받아 합을 콘솔에 출력
+            빼기 메소드 매개값 2수를 받아 차를 콘솔에 출력
+            곱하기 메소드 매개값 2수를 받아 곱을 콘솔에 출력
+            나누기 메소드 매개값 2수를 받아 나누기결과를 콘솔에 출력
+        */
+
+        let cal;
+
+        calc = {
+
+            infoAdd : function(num1, num2){
+                console.log(num1 + num2);
+            },
+
+            infoSub : function(num1, num2){
+                console.log(num1 - num2);
+            },
+
+            infoMul : function(num1, num2){
+                console.log(num1 * num2);
+            },
+
+            infoDiv : function(num1, num2){
+                console.log(num1 / num2);
+            }
+        }
+        calc.infoAdd(2,2);
+        calc.infoSub(3,2);
+        calc.infoMul(4,2);
+        calc.infoDiv(4,2);
+
+        /*
+        자바스크립트 객체는 생성된 후에도 필드 또는 메소드를 추가할 수 있다.
+        자바스크립트 객체 값 대입 사용시 필드나 메소드에 오타가 있는 경우
+        오류를 내지 않고 새로 추가한다.
+        */
+        calc.num1 = 10; //필드추가
+        console.log(calc.num1);
+
+        //Object 프로토타입을 사용하여 사용자 정의 객체 생성하기
+        let obj2 = new Object(); // {}속성과 메소드가 없는 객체 생성
+       
+        obj2.field01 = "필드01";
+        obj2.method01 = function(){
+            console.log("method01 호출!!");
+        };
+        /*
+        Object 프로토타입으로 생성된 객체는 생성 후 필드, 메소드 추가
+        */
+        console.log(obj2.field01);
+        obj2.method01();
+
+        //프로토타입을 사용한 사용자 정의형 객체 생성하기
+        function Person(age, addr, phone){
+            //필드선언
+            this.name = "홍길동";
+            this.age = age;
+            this.addr = addr;
+            this.phone = phone;
+            this.ifno = function(){
+                console.log("나의 이름은" + this.name + "입니다.");
+            }
+
+        }
+
+        let person2 = new Person();
+        console.log(person2.name);
+
+        let person3 = new Person(20,"전주","010-1111-1111");
+        console.log(person3.name);
+        console.log(person3.age);
+        console.log(person3.addr);
+        console.log(person3.phone);
+
+
+
+    
+
+
+    </script>
+</body>
+</html>

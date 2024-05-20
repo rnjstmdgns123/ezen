@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.plus라는 이름의 함수를 정의합니다.
+        //이때, 매개변수는 두개입니다.
+        //(실행문은 작성하지 마세요.)
+
+        function plus(num1, num2){
+            //해당 함수가 호출 됐을때 실행문은
+            //두 매개변수의 합을 화면에 출력합니다.
+
+            let sum = num1 + num2;
+
+            if(typeof sum == "String"){
+                return;
+            }
+
+            document.write(sum);
+            //sum 변수의 타입이 문자열이면
+            //힘수 강제 종료
+
+        }
+
+        //1,2의 합을 plus 함수를 호출하여 결과값을 출력해보세요.
+        plus(1,2);
+
+
+        //minus라는 이름의 함수를 선언합니다.
+        //이때, 매개변수는 두개이며 매개변수1과 매개변수2의
+        //차를 구하여 화면에 출력하는 실행문을 갖습니다.
+
+        function minus(num1,num2){
+
+            let sum;
+
+            if(isNaN(num1, num2)){
+                return;
+            }
+
+            if(num1 > num2){
+                sum = num1 - num2
+            }else{
+                sum = num2 - num1
+            }
+            return sum;
+            
+
+            document.write("<br>" + sum);
+        }
+
+        minus(2,"123");
+
+        function minus2(a,b){
+
+
+            if(isNaN(a, b)){
+                return;
+            }
+            
+
+            let result;
+
+            if(a > b){
+                result = b-a;
+            }else{
+                result = a-b;
+            }
+            return result;
+
+            
+
+            document.write(result);
+
+        }
+
+        let result = minus2(2,"5ㄴ");
+        document.write("<br>minus2(2,1) :" + result);
+
+
+
+
+        let animal = prompt("동물을 입력하세요.");
+        
+        function animalsound(animal){
+
+            let sound;
+
+            if(animal == "강아지"){
+                return sound = "멍멍";
+            }else if(animal == "고양이"){
+                return sound = "야옹";
+            }else if(animal == "호랑이"){
+                return sound = "어흥";
+            }else if(animal == "참새"){
+                return sound = "짹쨱";
+            }else{
+                return sound = "몰라요.";
+            }
+
+        }
+
+        let sound = animalsound(animal);
+        document.write("<br>" + animal + "울음소리는 " + sound);
+
+        /*
+        실행 예)
+        입력 값 : 강아지
+        출력 값 : 강아지 울음소리는 멍멍
+        고양이, 강아지, 호랑이, 참새, 소리외에는 울음소리를 몰라요.
+        */
+
+        
+
+
+
+    </script>
+
+    
+
+</body>
+</html>

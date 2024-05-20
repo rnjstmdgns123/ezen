@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>dom 구조를 활용한 javascript 요소 찾기 예제1</title>
+		<style>
+			.parent{
+				border:1px solid black;
+				margin:5px 0px;
+				
+			}
+			.child{
+				width:100px;
+				height:100px;
+				border:1px solid navy;
+				background-color:yellow;
+				margin:5px;
+				/*display:inline-block;*/
+			}
+		</style>
+		<script>
+			function line(){
+				alert('123');
+				let classes = document.getElementsByClassName("child");
+
+				for(let i = 0; i < classes.length; i++){
+					classes[i].style.display = 'inline-block';
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<h2>예제1</h2>
+		아래 div 들의 display 형식을 javascript를 사용하여 버튼 클릭시 inline-block 으로 변환하세요
+		<br>
+		<br>
+		<button onclick="line()">click</button>
+		<div class="parent">
+			<div class="child"></div>
+			<div class="child"></div>
+			<div class="child"></div>
+		</div>
+		<script>
+			
+			
+		</script>
+	</body>
+</html>

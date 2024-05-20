@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let firstPopup = null;
+        let secondPopup = null;
+        window.onload = function(){
+            firstPopup = window.open("popupbase.html", "popup", "width=300,height=300,left=200,top=200"); // 새창열기(팝업)
+        }
+
+        let popupleft = 0;
+        let popuptop = 0;
+        function openpopup(){
+            popupleft += 200;
+            popuptop += 100;
+            secondPopup = window.open("popupbase2.html","_blank", "width=300,height=200,left="+popupleft +",top="+popuptop);
+
+        }
+        function closepopup1(){
+            firstPopup.close();
+
+        }
+        function closepopup2(){
+            secondPopup.close();
+        }
+    </script>
+</head>
+<body>
+    <h1>부모 창 입니다.</h1>
+    <button onclick="openpopup()">새로운 팝업 열기</button>
+    <button onclick="closepopup1()">첫번째 팝업 닫기</button>
+    <button onclick="closepopup2()">두번째 팝업 닫기</button>
+    <br>
+    실행시 팝업이 열립니다.
+    <br>
+    <button onclick="movePageFn()">클릭시 popupbase.html로 이동</button>
+    <script>
+        function movePageFn(){
+            location.href = "popupbase.html";
+        }
+        
+    </script>
+    <button onclick="history.go(-1)">이전페이지로 이동</button>
+    <button onclick="history.go(1)">앞페이지로 이동</button>
+</body>
+</html>

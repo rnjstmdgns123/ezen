@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //제어문 : 실행코드는 위에서부터 아래로 실행되는데
+        //이때, 원하는 흐름을 만들기 위하여 사용되는 구문들
+
+        //1.조건문 : 특정조건에서 실행문 실행여부 결정하는 제어문
+        //if문 : 특정 조건이 참이거나 거짓인 경우 실행문 실행제어
+        //문법)
+        /*
+            if(조건식(연산의 결과가 true 또는 false)){
+                실행문...
+            }
+        */
+       let flag = true;
+       if(flag){
+        //조건식의 결과 true이면 {}블럭이 순차적으로 실행
+        document.write("flag 변수는 true 이다.");
+       }
+       if(1){
+        //조건식의 결과 true이면 {}블럭이 순차적으로 실행
+        document.write("1은 true를 의미한다.");
+       }
+       //조건식으로 참을 의미하는 값들은 전부 true로 인식한다.
+       let value=prompt('값을 입력하세요.');
+       
+       //사용자가 입력한 값이 1이거나 true이면
+       //'참을 의미합니다.<br>' 화면에 출력하세요.
+
+       if(value == 1 || value == 'true'){
+        document.write('<br>');
+        document.write('참을 의미합니다.<br>');
+       }
+
+       let age = prompt("나이를 입력하세요.");
+
+       //age의 값이 18초과이면 '성인입니다.<br>'를 화면에 출력해주세요.
+
+    //    if(age > 18){
+    //     document.write('성인입니다.<br>');
+    //    }
+
+       //age의 값이 8보다 작거나 65이상이면 '할인대상입니다.<br>' 출력하세요.
+       if( 8 > age ||age >= 65) {
+        document.write('할인대상입니다.<br>');
+       }else{ //if의 조건이 거짓인 경우 실행
+        document.write('할인대상이 아닙니다.<br>');
+       }   
+       /*
+       else문은 if문 없이 사용할 수 없다.
+       if의 실행블록과 else의 실행블록 둘중 하나만
+       반드시 실행됩니다.
+       */
+
+       //age의 값이 18이하이면 학생입니다.
+       //초과면 성인입니다. 출력하세요.
+
+       if(age <= 18){
+        document.write("학생입니다<br>");
+       }else{
+        document.write("성인입니다.<br>");        
+       }
+
+       //age가 7보다 작거나 같으면 미취학아동
+       //age가 7보다 크고 13보다 작거나 같으면 초등학생
+       //age가 13보다 크고 16보다 작거나 같으면 중학생
+       //age가 16보다 크고 19보다 작거나 같으면 고등학생
+       //age가 19보다 크면 성인 
+
+       if(age <= 7){
+        document.write("미취학아동");
+       }else if(7 < age && age <= 13 ){ //위 쪽 if문들의 조건이 거짓이고 현재 조건은 true이다.
+        document.write("초등학생");
+       }else if(13 < age && age <= 16){
+        document.write("중학생");
+       }else if(16 < age && age <= 19){
+        document.write("고등학생");
+       }else{ //위쪽 if문들이 모두 거짓인 경우이다.
+        document.write("성인");
+       }
+       
+        //switch문 : 식에 대한 값을 비교하여 실행문을 분기처리하는 제어문
+        
+       /*
+       switch(식){
+        case 비교값1:
+            실행문...
+            break; (해당 케이스에 대한 실행문 종료역할)
+        case 비교값2:
+            실행문...
+            break; (해당 케이스에 대한 실행문 종료역할)
+            ....
+        default: (위 케이스에 모두 해당하지 않는 경우 실행)
+            실행문... (맨 아래 유일한 실행문이기 때문에 break 생략)
+       }
+       */
+       document.write('<br>');
+       let id = prompt("아이디를 입력하세요.");
+       /*
+       사용자가 입력한 아이디가
+       'admin' 이면 '관리자아이디입니다.'
+       'tester1', 'tester2' 이면 '테스트아이디입니다.'
+       그외 ' 일반사용자아이디입니다.'
+       */
+
+       switch(id){
+        case 'admin':
+            document.write("관리자아이디입니다.<br>");
+            break;
+        case 'tester1': //실행문이 똑같으면 합칠 수 있음.    
+        case 'tester2':
+            document.write("테스트아이디입니다.<br>");
+            break;
+        default :
+            document.write("일반사용자입니다.<br>");
+       }
+
+       let day = prompt("요일을 입력하세요.(월,화,수,목,금,토,일)");
+
+       //switch문을 활용하여 day가 월~금이면 평일 토~일 주말
+       //그 외는 잘못입력하셨습니다. 출력하세요.
+
+       switch(day){
+        case "월" :
+        case "화" :
+        case "수" :
+        case "목" :
+        case "금" :
+            document.write('평일');
+            break;
+        case "토" :
+        case "일" :
+            document.write("주말");
+            break;
+        default :
+            document.write("잘못입력하셨습니다.");
+        }
+
+
+
+
+        //2.반복문 : 특정조건동안 반복해서 실행문을 실행하는 제어문
+        //for문
+        //while문
+        //do-while 문
+
+
+
+
+    </script>
+</body>
+</html>

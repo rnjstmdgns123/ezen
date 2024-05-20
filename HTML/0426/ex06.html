@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .t1 {
+            border-collapse: collapse;
+            /*
+            separate인 경우에는 tr에 테두리를 적용할 수 없음.
+            collapse인 경우에는 tr에 테두리를 적용할 수 있음.
+            */
+        }
+        .t1 tr{
+            border-top : 1px solid black;
+            border-bottom: 1px solid black;
+        }
+        .t1 tr:hover{
+            background-color: pink;
+        }
+        .t1 td{
+            text-align: center;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <table class="t1">
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

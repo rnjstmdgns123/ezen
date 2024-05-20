@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 메타 태그를 사용하여 저자를 표현하세요-->
+    <meta name="author" content="권승훈">
+    <!-- 메타 태그를 사용하여 웹페이지 설명을 표현하세요. 설명 : 영역 태그를 학습하고 실습합니다.-->
+    <meta name="description" content="메타 태그를 학습하고 실습합니다.">
+    <!-- 메타 태그를 사용하여 키워드를 명시하세요. 키워드 : html, css, span -->
+    <meta name="keywords" content="html, div, span">
+    <!-- 디바이스에 대해서 너비를 자동 지정해주는 기능-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영역 태그 사용하기</title>
+    <style>
+        span { color:red; }
+    </style>
+</head>
+<body>
+    <h2>영역 태그 사용하기</h2>
+    <hr>
+    <h3>div</h3>
+    -div 태그는 블럭단위로 영역을 나눌때 사용하는 태그입니다.<br>
+    -사용시 감싸인 내용 아래 내용은 div 블럭 아래로 출력 됩니다.<br>
+    -주로 css, javascript를 사용하여 블럭 단위로 효과를 주기 위하여 사용합니다.
+    <h3>span</h3>
+    -span 태그는 인라인 단위로 영역을 나눌때 사용하는 태그 입니다.<br>
+    -한 행에서 특정 영역을 나눠 css,javascript를 적용할 수 있습니다.<br>
+    -span 태그 다음 내용은 한 행으로 출력됩니다.<br>
+
+    -div와 span은 html에서css,javascript 적용을 위한 구조를 잡는 태그입니다.<br>
+    <!-- div는 css, javascript를 사용할 떄 영역내에 효과를 주기 위해 사용-->
+    <!-- 속성은 해당 태그에 종속임-->
+    <div style="background-color:yellow;">
+        산<span>토끼</span><br>
+        산<span>토끼 토끼 토끼</span>야<br>
+        어디를 가느냐<br>
+        깡총깡총 뛰면서 어디를 가느냐<br>
+    </div>
+    span태그를 사용하여 토끼 텍스트를 빨간색으로 출력해보세요.
+    test
+    <div style="background-color:green;">
+        학교종이 <span style="color:red;">땡땡떙</span><br>
+        어서모이자<br>
+        선생님이 우리를 기다리신다.<br>
+    </div>
+</body>
+</html>

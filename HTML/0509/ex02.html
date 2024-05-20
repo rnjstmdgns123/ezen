@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let today = new Date(); //오늘날짜객체생성
+        console.log(today);
+
+        //자바스크립트 date객체의 getter는 전부 숫자로 정보를 반환
+        let year = (today.getFullYear());
+        console.log(year);
+        console.log(typeof year);
+
+
+        
+        let month = (today.getMonth() + 1 ); // 0이 1월부터 시작
+        console.log(month);
+        console.log(typeof month);
+
+        let monthStr = new String(month);
+        if(monthStr.length < 2){ //자리수 월
+            monthStr = "0" + monthStr;
+        }
+
+        
+
+        let date = (today.getDate());
+        console.log(date);
+        console.log(typeof date);
+
+        let dateStr = new String(date);
+        if(dateStr.length < 2 ){
+            dateStr = "0" + dateStr;
+            
+        }
+
+        //2024-5-9
+        //2024.5.9
+
+        console.log(year + "-" + monthStr +"-" + dateStr);
+
+        let day = today.getDay(); //0:일요일 ~ 6:토요일
+        console.log(day);
+
+        //특정날짜객체 생성
+        let otherday = new Date("2024-05-01");
+        console.log(otherday);
+
+        //5월 1일부터 오늘까지 날짜 구하기
+        let todayTime = today.getTime();
+        console.log(todayTime);
+
+        let otherdayTime = otherday.getTime();
+        console.log(otherdayTime);
+
+        let getTime = todayTime-otherdayTime;
+        console.log(getTime);
+
+        let result = Math.ceil(getTime/1000/60/60/24); //초->분->시->일 밀리초로 반환하기 떄문에 1000이 1초
+        console.log(result);
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

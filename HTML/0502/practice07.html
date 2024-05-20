@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        
+
+        let flag = true;
+        
+        while(flag){
+  
+            let month = prompt("달을 입력하세요.","");
+            flag = false;
+            month = parseInt(month);
+
+                switch(month){
+
+                    case 11 :
+                    case 12 :
+                    case 1 :
+                    case 2 :
+                        document.write("겨울");
+                        break;
+                        
+                    case 3 :
+                    case 4 :
+                    case 5 :
+                        document.write("봄");
+                        break;
+                    case 6 :
+                    case 7 :
+                    case 8 :
+                        document.write("여름");
+                        break;
+                    case 9 :
+                    case 10 :
+                    case 11 :
+                        document.write("겨울");
+                        break;
+                    
+                    default :
+                        document.write("잘못 입력하셨습니다. 다시 입력해주세요.");
+                    
+                }
+           
+        }
+
+
+    </script>
+</body>
+</html>

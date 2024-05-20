@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 65px;
+            margin: 3px 5px ;
+
+        }
+
+    </style>
+    <script>
+        let result = 0; //연산 버튼 누를때마다 결과값 저장 변수
+       
+
+        
+        
+        function btn(obj){
+
+            let value = obj.value;
+
+            let btnClick = document.getElementById("num").value += obj.value;
+            console.log(btnClick);
+            //alert(btnClick);
+            
+            // alert(btnClick);
+            
+            
+            
+            //alert(value);
+            
+
+        }
+        function cen() {
+
+            let btnClick = document.getElementById("num").value = "";
+            result = 0; //연산결과 초기화
+
+        }
+
+        function back(){
+
+
+            let btnback = document.getElementById("num").value;
+
+            btnback = btnback.substring(0, btnback.length-1);
+            
+            document.getElementById("num").value = btnback;
+            console.log(btnback);
+            // console.log(btnback.length);
+
+        }
+
+
+        function relt(){
+
+            let btnClick = document.getElementById("num").value;
+
+
+            
+            console.log(typeof btnClick);
+
+            console.log(btnClick);
+
+            //연산자 중복될 시 해당 값 그대로 유지
+            //정규식 활용하여 연산자 찾기
+            //연산자를 중심으로 좌우 값 계산
+            
+            
+
+        }
+
+
+        
+    </script>
+</head>
+<body>
+    <h3>계산기 만들기</h3>
+    <hr>
+    <div id="frm">
+        <input type="text" id="num"size="40" value="" onkeydown="false">
+        <br>
+        <button onclick="back()">back</button>
+        <button onclick="cen()">CE</button>
+        <button onclick="cen()">C</button>
+        <button onclick="relt()">=</button>
+        <br>
+        <button onclick="btn(this)" value="7">7</button>
+        <button onclick="btn(this)" value="8">8</button>
+        <button onclick="btn(this)" value="9">9</button>
+        <button onclick="btn(this)" value="/">/</button>
+        <br>
+        <button onclick="btn(this)" value="4">4</button>
+        <button onclick="btn(this)" value="5">5</button>
+        <button onclick="btn(this)" value="6">6</button>
+        <button onclick="btn(this)" value="*">*</button>
+        <br>
+        <button onclick="btn(this)" value="1">1</button>
+        <button onclick="btn(this)" value="2">2</button>
+        <button onclick="btn(this)" value="3">3</button>
+        <button onclick="btn(this)" value="-">-</button>
+        <br>
+        <button onclick="btn(this)" value="0">0</button>
+        <button onclick="btn(this)" value="+">+</button>
+        <button>NONE</button>
+        <button>NONE</button>
+    </div>
+</body>
+</html>

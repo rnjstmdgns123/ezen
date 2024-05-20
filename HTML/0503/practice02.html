@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        .di{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write("<ul>");
+        
+        for(let num = 1; num <= 3; num++){
+
+        document.write("<li>항목"+ num);            
+        document.write("<ul>");            
+        document.write("<li>항목"+ num +"_1");
+        document.write("</li>");     
+        document.write("<li>항목"+ num +"_2");
+        document.write("</li>");  
+        document.write("</ul>");
+        document.write("</li>");
+        }
+        
+        document.write("</ul>");     
+
+        // document.write("<ol>");
+
+        
+        // for(let cnt = 1; cnt <=5; cnt++){
+        //     document.write("<li>항목" +cnt +"</li>");
+        // }
+        
+        // document.write("</ol>");
+
+        for(cnt = 0; cnt <=100; cnt+=50){
+            document.write('<div class="box" style="margin-left: +'+ cnt +'px;"></div>');
+            }
+            
+        
+        console.log(cnt);
+
+
+    </script>
+
+    <div class="box" style="margin-left: 0px;"></div>
+    <div class="box" style="margin-left: 50px;"></div>
+    <div class="box" style="margin-left: 100px;"></div>
+    <ul>
+        <li>항목1
+            <ul>
+                <li>항목1_1</li>
+                <li>항목1_2</li>
+            </ul>
+        </li>
+        <li>항목2
+            <ul>
+                <li>항목2_1</li>
+                <li>항목2_2</li>
+            </ul>
+        </li>
+        <li>항목3
+            <ul>
+                <li>항목3_1</li>
+                <li>항목3_2</li>
+            </ul>
+        </li>
+    </ul>
+
+    
+</body>
+</html>

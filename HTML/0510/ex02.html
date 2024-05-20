@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id ="box1" class="box1class">
+        <h3>dom객체의 구성요소 살펴보기</h3>
+    </div>
+    <div id ="box1">
+        <h3>아이디 box1인 요소 두번째</h3>
+    </div>
+
+
+
+    <script>
+        //요소는 화면에 그려진 후에 dom 객체로 찾을 수 있다.
+        let box1;
+        /*
+        현재 웹페이지에서 아이디 속성값이 box1인 첫번째 요소 하나만 찾는다.
+        */
+        box1 = document.getElementById("box1");
+        console.log(box1);
+        console.log(box1.id);
+        box1.id = "changebox";
+        console.log(box1.id);
+        /*
+        html 태그와 dom객체는 다르기 때문에
+        html 태그가 가진 속성을 dom 객체의 프로퍼티로 없을 수 도 있다.
+        */
+        console.log(box1.class);
+        /*
+        html태그의 속성은 dom 객체의 getAttribute 메소드를 통해서 알 수 있다.
+        */
+        console.log(box1.getAttribute("class"));
+
+        /*
+        dom 객체의 태그명을 얻어올 수 있다. 이때, 전부 대문자로 반환
+        읽기전용
+        */
+        console.log(box1.tagName);
+
+        let html = box1.innerHTML;
+        console.log(html);
+        console.log(typeof html);
+
+        box1.innerHTML = "<h1>변경 텍스트!</h1>";
+        // box1.textContent = "<h1>변경 텍스트!</h1>";
+        console.log(box1.textContent);
+        /*
+        innerHTML : dom객체의 컨텐츠를 문자열로반환 하거나 html로 새로 쓸 수 있다.
+        textContent : dom 객체 안의 텍스트들만 반환하거나
+                    오로지 텍스트로만 새로 쓸 수 있다. (html 태그 까지도);
+
+        */
+
+        box1.style.color="red";
+        //background-color
+        box1.style.backgroundColor = "pink";
+        
+        /*
+        dom 객체의 style 속성을 활용하면 css를 제어할 수 있다.
+        이 때 하이픈으로 이어진 css 속성은 카멜기법으로 변경하여 적용한다.
+        */
+    </script>
+</body>
+</html>

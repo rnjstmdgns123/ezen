@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clickfn(event)">click</button>
+    <!--
+        event : 현재 발생한 이벤트에 대한 정보를 담고 있는 객체
+        인라인 이벤트 리스너 작성시에는 이벤트리스속성의 속성값에서
+        event라는 키워드로 이벤트 객체를 사용할 수 있다.
+    -->
+    <script>
+        function clickfn(e){ //매개변수 e에 event 객체 받기
+            console.log(e);
+            console.log(e.type); //발생한 이벤트의 종류
+            console.log(e.target); //이벤트를 발생시킨 dom객체
+        }
+    </script>
+    <a href="http://www.naver.com" target="_blank" onclick="clickAtag(event)">클릭하면 경로 이동</a> 
+    <a href="http://www.google.com" target="_blank" onclick="return false;">클릭하면 경로이동 2</a> <!-- 기본행위 취소-->
+    <script>
+        function clickAtag(e){
+            e.preventDefault(); 
+            console.log(e.defaultPrevented); // ture: 기본행위 취소, false : 기본행위 진행
+        }
+    </script>
+
+    <form name="frm">
+        아이디 : <input type="text" name="id">
+        <br>
+        이름 : <input type="text" name="name">
+        <br>
+        <button type="submit" onclick="validation(); return false;">회원가입</button>
+        <script>
+            function validation(){
+                //입력값의 유효성을 확인하는 함수
+
+                let idcheck = false; //아이디값이 유효한지 여부 담는 변수
+
+                //1. 아이디 입력값에 한글이 있는지
+                let id = document.frm.id.value; //해당함수 호출시 입력값
+                
+                //한글이 있으면 submin 안됨
+                let idreg = /[ㄱ-ㅎ|ㅏ-ㅓ|가-힇]/;
+                let checkIdreg = idreg.test(id);
+                console.log(checkIdreg);
+                //한글이 없으면 1차 통과
+                if (!checkIdreg){
+                    idcheck = true;
+                }
+                //2. 이름 입력값에 영문이 있는지
+                    let name = document.frm.name.value;
+                    let nameReg = /[a-zA-Z]/;
+                    let checkNameReg = nameReg.test(name);
+
+                //영문이 있다면 submit 안됨
+                console.log(checkNameReg);
+                let checkName = false; // 이름에 영문이 있는지 여부 담을 변수
+
+                //영문이 없다면 2차 통과
+                if(!checkNameReg){
+                    checkName = true;
+                }
+
+                //3.1,2 모두 통과이면 submit
+                if(idcheck && checkName){
+                    //submit해야함
+                    document.frm.submit();
+                }else{
+                    if(!idcheck){
+                        alert("아이디를 바르게 입력하세요.");
+                    }
+                    if(!checkName){
+                        alert("이름을 바르게 입력하세요.");
+                    }
+                }
+                
+            }
+        </script>
+    </form>
+    <input type="text" onkeydown="return false;"> <!-- 키보드 입력 안됨, 한글은 해당 x-->
+</body>
+</html>

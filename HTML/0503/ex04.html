@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    //반복문
+    //1.for문:반복의 횟수를 알고 있는 경우 특정
+    //        구간을 반복하는 제어문
+
+    /*
+    for( 초기화식; 조건식; 증감식){
+      //실행문들...
+    }
+    1.초기화식 : 반복에 사용할 카운트 변수 초기화
+    2.조건식 : 조건이 true인지 비교
+    
+    3.조건식이 true인 경우 : 
+    4.실행문 실행
+    5.증감식 실행
+    2.조건식 비교->3->4->5 반복 (2번조건식이 false까지)
+    
+    3.조건식이 false인 경우 : 반복 종료
+    */
+    for(let cnt=1;cnt<=10;cnt++){
+      document.write("*");
+    }
+    document.write("<br>");
+    /*
+    실행 예시)
+    a
+    a
+    a
+    a
+    a
+
+    */
+    for(let cnt=0;cnt<5;cnt++){
+      document.write("a<br>");
+    }
+
+    /*
+    실행문 예시)
+    1
+    2
+    3
+    4
+    5
+    */
+   for(let cnt=1; cnt<=5 ;cnt++){
+    document.write(cnt+"<br>");
+   }
+   /*
+   실행 예시)
+    document.write("<h1>hello</h1>");
+    document.write("<h2>hello</h2>");
+    document.write("<h3>hello</h3>");
+    document.write("<h4>hello</h4>");
+    document.write("<h5>hello</h5>");
+    document.write("<h6>hello</h6>");
+   */
+  for(let cnt=1;cnt<=6;cnt++){
+    document.write("<h"+cnt+">hello</h"+cnt+">");
+  }
+
+  let star = '*';
+  for(let cnt=1; cnt<=5 ;cnt++){
+    document.write(star+"<br>");
+    star+="*"; //** *** **** *****
+  }
+
+  document.write('<table border="1">');
+  for(let rowcnt=1; rowcnt<=2;rowcnt++){
+    document.write("<tr>");
+    document.write("<th>n");
+    if(rowcnt==2){
+      document.write("<sup>2</sup>");
+    }
+    document.write("</th>");
+    for(let colcnt=0; colcnt<=9; colcnt++){
+      let data = 1;
+      /*if(rowcnt == 2){
+        data *= data;
+      }*/
+      for(let datacnt=1; datacnt<=rowcnt;datacnt++){
+        data*=colcnt;
+      }
+      document.write("<td>"+data+"</td>");
+    }
+    document.write("</tr>");
+  }
+  document.write('</table>');
+
+  document.write("<ul>");
+    
+  for(let cnt=1; cnt<=3; cnt++){
+    document.write("<li>항목"+cnt);
+    document.write("<ul>");
+    for(let licnt=1; licnt<=2;licnt++){
+      document.write("<li>항목"+cnt+"_"+licnt+"</li>");
+    }
+    document.write("</ul>");
+    document.write("</li>");
+  }
+  document.write("</ul>");
+  
+  document.write("<ol>");
+  for(let cnt=1; cnt<=5; cnt++){
+    document.write("<li>항목"+cnt+"</li>");
+  }
+  document.write("</ol>");
+
+  for(let cnt=0; cnt<=100; cnt+=50){
+    document.write('<div class="box" style="margin-left: '+cnt+'px;"></div>');
+  }
+  
+  </script>
+  <h2>자바스크립트의 반복문을 사용하여 같은 화면이 출력되도록 작성하세요.</h2>
+  <div style="border: 1px solid black;float: left;width: 30%;height: 120px;">
+    <table border="1" style="margin: 10px;">
+      <tr>
+        <td>*</td>
+      </tr>
+      <tr>
+        <td>*</td>
+      </tr>
+      <tr>
+        <td>*</td>
+      </tr>
+    </table>
+    <!--script>
+      document.write('<table border="1" style="margin: 10px;">');
+      for(let cnt=1; cnt<=3; cnt++){
+        document.write('<tr><td>*</td></tr>');
+      }
+      document.write('</table>');
+    </script-->
+  </div>
+  <div style="border: 1px solid black;float: left; width: 30%;height: 100px;padding: 10px;">
+    *****<br>
+    ****<br>
+    ***<br>
+    **<br>
+    *<br>
+    <!--script>
+      for(let cnt=5; cnt>=1; cnt--){
+        let star='';
+        for(let starcnt=1; starcnt<=cnt; starcnt++){
+          star+='*'
+        }
+        document.write(star+"<br>");
+      }
+    </script-->
+  </div>
+  <div style="border: 1px solid black;float: left;width: 30%;height: 120px;margin-bottom: 10px;">
+    <ul>
+      <li><a href="#">링크1</a></li>
+      <li><a href="#">링크2</a></li>
+      <li><a href="#">링크3</a></li>
+    </ul>
+    <!--script>
+      document.write("<ul>");
+      for(let cnt=1; cnt<=3; cnt++){
+        document.write('<li><a href="#">링크'+cnt+'</a></li>');
+      }
+      document.write("<ul>");
+    </script-->
+  </div>
+</body>
+</html>

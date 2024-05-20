@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function isEven(value){
+            
+            n = parseInt(value);
+
+            if(n%2 == 0){
+                document.write(value + "은 짝수 입니다.");
+            }else if(n%2 == 1){
+                document.write(value + "은 홀수 입니다.");
+            }
+            
+
+        }
+
+        let value = prompt("숫자를 입력하세요.");
+
+        isEven(value);
+
+        /*
+        입력값 예시) 10
+        실행 결과 예시) 10은 짝수 입니다.
+        입력값 예시) 11
+        실행 결과 예시 ) 11은 홀수입니다.
+        위 실행결과들이 나올 수 있도록 isEven()함수를 수정하세요.
+        */
+    </script>
+</head>
+<body>
+    
+    
+</body>
+</html>

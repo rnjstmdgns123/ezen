@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>dom 구조를 활용한 javascript 요소 찾기 예제2</title>
+		<style>
+			div{
+				margin-top:5px;
+			}
+		</style>
+		<script>
+			function cik(){
+
+				let class01s = document.getElementsByClassName("div01");
+				console.log(class01s[0]);
+
+				// class01s[0].style.backgroundColor = "white";
+				// console.log(class01s[0].style.backgroundColor);
+				console.log(class01s[0].style.backgroundColor);
+
+				
+
+				if(class01s[0].style.backgroundColor == "" || class01s[0].style.backgroundColor == "black"){
+					
+					class01s[0].style.backgroundColor = "red";
+					
+				}else if(class01s[0].style.backgroundColor == "red"){
+					class01s[0].style.backgroundColor = "black";
+				}
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h2>예제2</h2>
+		-아래 버튼을 클릭하면 div 안에 텍스트 색상을 검은색인 경우 빨간색으로 빨간색인 경우 검은색으로 변경하세요
+		<br>
+		</br>
+		<button onclick="cik()">click</button>
+		<div class="div01">
+			이 텍스트 색상을 검정색과 빨간색을 번갈아가면서 바꾸시면 됩니다.
+		</div>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        본문이 전부 로드된 후 이벤트 호출하는 방법 2가지
+        1.body 태그에 onload 이벤트 속성 사용하기
+        */
+        function loadfn(){
+            console.log(document.getElementById("loadElement"));
+            let img = document.getElementById("img");
+            console.log("---------------이미지 정보-----------------")
+            console.log(img.width);
+            console.log(img.height);
+        }
+        /*
+        2.window 객체의 onload 이벤트 프로퍼티 사용하기
+         - 이벤트리스너는 반드시 함수로 정의하여 등록한다.
+        */
+        window.onload = loadfn;
+        function changeIMG(){
+            let img = document.getElementById("img");
+            img.src = "apple1.jpg";
+            /*
+            console.log(img.width);
+            console.log(img.height);
+            */
+        }
+        function loadIMG(obj){
+            console.log(obj.width);
+            console.log(obj.height);
+        }
+        
+    </script>
+</head>
+<body><!--onload="loadfn()"--><!-- 본문이 다 그려진 후 loadfn을 호출-->
+    <div id="loadElement">onload용 div 입니다.</div>
+    <img src="banana2.jpg" id="img" onload="loadIMG(this)">
+    <button onclick="changeIMG()" >이미지변경</button>
+</body>
+</html>

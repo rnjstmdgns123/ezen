@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block span{
+            border: 1px solid black;
+            display: block;
+            width : 100px;
+        }
+        .inline div {
+            border : 1px solid black;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .flex {
+            display: flex; /* 해당 요소안의 자식요소들을 정해진 규칙에 따라 균등하게 배치하라*/
+        }
+        .flex div{
+            width: 100px;
+            height: 30;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+    <div class="inline">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div class="flex">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

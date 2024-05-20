@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            let t01 = document.getElementById("t01");
+
+            t01.onchange = function(){
+                alert(this.value);
+            }
+
+        }
+
+        function checkChangeFn(obj){
+            let checkYn = obj.checked;
+            //name 속성 값이 check01인 모든 요소들을 조회하여 배열로 check01 변수 대입
+            let check01s = document.getElementsByName("check01");
+            if(checkYn){ //체크됨
+                for(let i=0; i<check01s.length; i++){
+                    check01s[i].checked = true;
+                }
+
+            }else{ //체크 해제됨
+                for(let i=0; i<check01s.length; i++){
+                    check01s[i].checked = false;
+            }
+        }
+    }
+    function changeSelectFn(obj){
+        let options = obj.options; //셀렉트 요소의 모든 옵션 태그들 돔객체배열로 반환.    
+        let sellindex = obj.selectedIndex //선택된 옵션의 인덱스 번호
+        console.log(options[sellindex]);
+        //콘솔에 선택된 옵션의 value값을 출력하세요.
+        console.log(options[sellindex].value);
+
+        //선택된 옵션태그 시작종료태그 사이 텍스트
+        console.log(options[sellindex].textContent);
+        console.log(options[sellindex].innerHTML);
+        
+    }
+    </script>    
+</head>
+<body>
+    <input type="text" id="t01"><br>
+    <input type="checkbox" name="checkall" onchange="checkChangeFn(this)">전체선택<br>
+    <input type="checkbox" name="check01" value="c001">check01
+    <input type="checkbox" name="check01" value="c002">check02
+    <input type="checkbox" name="check01" value="c003">check03
+    <br>
+    <select onchange="changeSelectFn(this)">
+        <option value="java">java</option>
+        <option value="html">html</option>
+        <option value="css">css</option>
+        <option value="javascript">javascript</option>
+    </select>
+</body>
+</html>

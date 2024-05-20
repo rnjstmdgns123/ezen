@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[]로 배열 만들기</title>
+</head>
+<body>
+    <h3>[]로 배열만들기</h3>
+    <hr>
+    <script>
+        let plots = [20, 5, 8, 15, 20];
+        document.write("let plots = [20, 5, 8, 15, 20]<br>");
+
+        for(let i = 0; i < 5; i++){
+            let size = plots[i];
+            while(size > 0){
+                document.write("*");
+                size--;
+            }
+            document.write(plots[i] + "<br>");
+        }
+    
+    //2.Array 내장 클래스를 사용하여 배열 생성하기
+
+    //2-1) 초기값이 존재하는 배열 생성
+    //자바스크립트 배열은 변수 선언 후에도 리터널로 배열을 생성할 수 있다.
+        let arr01 = new Array(1,2,3,4,5);
+        console.log(arr01);
+        arr01 = [1,2,3];
+        console.log(arr01);
+
+        let sum = 0;
+        for(let i = 0; i < arr01.length; i++){
+            sum += arr01[i];
+        }
+        document.write(sum +"<br>");
+
+        let arr03 = new Array("j","a","v","a","s","c","r","i","p","t");
+
+        for(let i = 0; i< arr03.length; i++){
+            document.write(arr03[i]);
+            console.log(arr03[i]);
+        }
+
+
+    //2-2) 길이만 존재하는 배열 생성
+    //길이로 배열을 생성하는 경우 모든 원소는 undefined 값을 갖는다.
+        let beanArr = new Array(7);
+        console.log(beanArr.length);
+        for(let i = 0; i < beanArr.length; i++){
+            console.log(beanArr[i]);
+        }
+    //2-3) 빈 배열 생성
+    let emptyAcc = new Array();
+    // let emptyArr = []; 위와 같음
+    
+    emptyAcc[0] = "a";
+    console.log(emptyAcc.length);
+
+    let arr02 = new Array(10);
+    arr02[4] = 5;
+
+    document.write("<br>" + arr02);
+    document.write("<br>");
+    document.write(arr02.length);
+    document.write("<br>");
+    arr02.length = 5; //자바스크립트 배열의 길이는 변경이 가능하나 권장하지 않는다.
+    document.write(arr02.length);
+    document.write("<br>" + arr02);
+    </script>
+</body>
+</html>

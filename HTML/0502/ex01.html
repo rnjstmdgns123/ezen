@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //조건 연산자(삼항연산자):조건을 비교하여 참인 경우 거짓인 경우에 따른 값 도출하는 연산자
+
+        //'a'와 'b' 중 알파벳순 더 빠른 문자는?
+        // let text;
+        // text = ('a'<'b') ? 'a':"b";
+        // console.log(text);
+
+        // let age = prompt('나이를 입력하세요');
+
+        //age 변수의 값이 20보다 작으면 '미성년자'
+        //크면 '성인' 이란 문자열을 text 변수에 대입 후
+        // 콘솔에 출력하세요.
+        
+        // text = (20 <age) ? '미성년자' :'성인';
+        // console.log(text);
+
+        /*promt를 활용하여 사용자에게 텍스트를 입력 받아와
+        id 변수에 대입합니다. 그 후 사용자가 입력한 값이
+        'admin' 이면 '관리자'라는 값을 text 변수에 대입
+        아니면 '일반' 이라는 값을 변수에 대입하여 콘솔에 출력하세요.
+        */
+        let text;
+        let id = prompt('아이디를 입력하세요.');
+
+        text = (id =='admin') ? '관리자' : '일반';
+        
+        // if( id == 'admin'){
+        //     text = '관리자'
+        // }else if( id == '일반'){
+        //     text = '일반'
+        // }
+
+        console.log(text);
+
+        //문자열 연산자 : 하나이상의 문자열을 결합하는 연산자(+)
+
+        let str1 = "10";
+        let num1 = 10;
+
+        result = num1 + 20; //number
+        rseult = str1 + 10; //String (피연산자 하나라도 문자열이면 연산의 결과는 문자열)
+        
+        document.write(str1 + "+21 = " + result);
+
+
+        
+
+
+
+        </script>
+</body>
+</html>

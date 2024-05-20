@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="inline" onclick="callAlert()">클릭하면 경고창이 실행됩니다. (인라인 이벤트 리스너)</div>
+    <div id="property">클릭하면 경고창이 실행됩니다. (dom객체 이벤트 리스너 프로퍼티)</div>
+    <div id="method">클릭하면 경고창이 실행됩니다. (dom객체 이벤트 리스너 메소드)</div>
+    <script>
+
+        function callAlert(){
+            alert("div를 클릭했습니다.");
+        }
+
+        //무명함수(콜백함수)
+        let propertyDIV = document.getElementById("property");
+        propertyDIV.onclick = callAlert;
+        /*
+         미리 선언되어 있는 함수를 이벤트리스너 함수로 등록할 때는
+         함수명만 대입한다. (함수명 뒤에 괄호를 붙이지 않는다.)
+         * /
+       
+        /*propertyDIV.onclick=function(){
+            
+            이벤트 리스너 프로퍼티들은 속성값으로 전부 함수를 갖는다.
+            그 후 이벤트 발생시 해당 함수를 호출한다.
+            
+            alert("이벤트 리스너 프로퍼티");
+        }
+        */
+        let methodDIV = document.getElementById("method");
+        methodDIV.addEventListener("click", callAlert);
+        /*
+        methodDIV.addEventListener("click", function(){
+            alert("이벤트 리스너 메소드 작성");
+        });// 이벤트리스너 등록
+        */
+
+
+    </script>
+
+    <p onmouseover="this.style.backgroundColor='orchid'" onmouseout="this.style.backgroundColor='white'">
+        마우스를 올리면 orchid 색으로 변경</p>
+</body>
+</html>

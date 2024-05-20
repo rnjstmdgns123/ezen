@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>동적 요소 제어_요소 생성하기</h3>
+    <button type="button" onclick= "addEle()">add</button>
+    <div id="parent">
+
+    </div>
+    <script>
+        let cnt = 0;
+
+        function addEle(){  
+            //alert("클릭하셨습니다.");
+            //1. p태그새로 생성하기
+            cnt++;    
+            let newP = document.createElement("p");
+            
+            newP.innerHTML = "새로생성된 p태그입니다." +cnt +"<button onclick='removeEle(this.parentElement)'>삭제</button>";
+
+            //2.dom 트리의 노드 dom 객체들 중
+            //새로 생긴 p태그를 포함할 기준 객체 찾기
+            let parent = document.getElementById("parent");
+
+            //3. 2번에서 찾은 dom객체에 새로 생성한 p 태그 추가하기
+
+            parent.appendChild(newP);
+        }
+
+        function removeEle(obj){ 
+            //매개변수 obj는 삭제하고자하는 요소
+
+            //console.log(obj.textContent);
+
+            //1.삭제하고자하는 요소를 찾는다. (매개변수 obj)
+
+            //2.삭제하고자하는 요소의 부모를 찾는다.
+            let parent = obj.parentElement;
+            //3.부모로부터 나 자신 자식을 삭제한다.
+            parent.removeChild(obj);
+
+        }
+
+    </script>
+</body>
+</html>

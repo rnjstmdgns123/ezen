@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 선택자 예제</title>
+    <style>
+        * { font-size:1em; } /* 전체 선택자 : 디자인 레이아웃 확인을 위해 사용*/ 
+        #all { color:green; }
+        /*선택자에 특정 속성이 선언되어 있는 요소 찾기*/
+        #attr input[value] { background-color: yellow; }
+        /*선택자에 특정 속성값이 일치하는 요소 찾기*/
+        #attr input[type=password] { background-color: pink; }
+
+        .attr input[placeholder] { background-color: blue; } 
+        .attr input[type=text] { background-color: orange; }        
+
+        #virtual #box1 { background-color: yellow; width:200px; height:200px; }
+        /*hover 가상클레스 선택자 (가상클래스는 혼자 사용될 수 없음 셀렉터와 같이 사용됨)*/
+        #virtual #box1:hover { background-color:red; }
+        /*acrive 가상클래스 누르고 있을 때 색상 변경*/
+        #virtual #box1:active { background-color:green; }
+
+        #menu a { color:lightgrey; }
+        #menu a:hover { color:black; }
+        #menu a:active { color:orange; }
+
+        /*
+            아이디가 menu인 자손 a 태그들에게 마우스가 올라가면 
+            글자색 검정색으로 링크를 클릭할 때는 주황색으로 
+            변경하세요.
+        */
+        /* focus 가상클래스 클릭시 해당 속성 적용*/
+        #form input:focus { background-color: lemonchiffon; font-size: 1.3em; width:100px; }
+
+        #link a:link { color:orange; }
+        #link a:visited { color:green; }
+
+
+    </style>
+</head>
+<body>
+    <h3>전체 선택자</h3>
+    <div id="all">
+        <h4>* 기호를 사옹하여 모든 요소를 찾을 수 있다.</h4>
+        <p>특정 태그안의 모든 하위 요소를 찾을 수 있다.</p>
+    </div>
+    <h3>속성 선택자</h3>
+    <div id="attr">
+        <input type="text" value="초기값"><br>
+        <input type="password"><br>
+    </div>
+    <div class="attr">
+        <input type="text"><br>
+        <input type="email" placeholder="이메일"><br>
+        <input type="url" placeholder="url"><br>
+        <input type="text"><br>
+        <!-- placeholder 속성을 가지고 있는 요소는 배경 파란색
+        type이 text인 요소의 배경은 주황색으로 변경하세요-->
+    </div>
+    <h3>가상클래스 선택자</h3>
+    <div id="virtual">
+        <div id="box1">
+            :hover,:active 다루기
+        </div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+        </ul>
+    </div>
+    <div id="form">
+        <input tpye="text"><br>
+        <input tpye="text"><br>
+        <input tpye="text"><br>
+        <input tpye="text"><br>
+    </div>
+    <div id="link">
+        <a href="ex02.html">링크1</a><br>
+        <a href="http:">링크2</a><br>
+    </div>
+</body>
+</html>

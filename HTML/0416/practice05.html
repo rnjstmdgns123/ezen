@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 수정하기</title>
+</head>
+<body>
+    <header><h3>게시판 수정하기</h3></header>
+    <hr>
+    <section>
+        <form name="" action="" method="get">
+            <table border="1"  width="60%" height="20%">
+                <colgroup>
+                    <col width="10%">
+                    <col width="20%">
+                    <col width="10%">
+                    <col width="20%">
+                    <col width="10%">
+                    <col width="5%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td align="center">제목</td>
+                        <!-- required는 필수 입력-->
+                        <td colspan="5"><input type="text" name="title"  required placeholder="제목을 입력하세요" size="40" ></td>
+                    </tr>
+                    <tr>
+                        <td align="center">작성자</td>
+                        <!-- readonly, disabled 둘다 수정 불가 submit을 했을 때 readonly는 값이 넘어가지만 disbaled는 값이 넘어가지 않음-->
+                        <td><input type="text" name="writer" value="홍길동" readonly></td>
+                        <td align="center">등록일</td>
+                        <td>2022-01-28</td>
+                        <td align="center">조회수</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td align="center">내용</td>
+                        <td colspan="5">
+                        <textarea name="contents"cols="50" rows="20" placeholder="내용을 입력하세요"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button">목록</button>
+            <button type="submit">저장</button>
+            <button type="button">삭제</button>
+        </form>
+    </section>
+    <hr>
+    <footer>게시판 상세보기</footer>
+</body>
+</html>

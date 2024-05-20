@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = "javascript";
+
+        //1.charAt(인덱스) : 문자열 특정인덱스 문자 반환
+        //2.charCodeAt(인덱스) : 문자열 특정인덱스의 문자 유니코드 반환
+        //3.concat(문자열,...) : 순서대로 문자열 합친 문자열을 반환 ( + 연산자로 대신 가능)
+        //4.indexof(문자열) : 대상문자열에서 특정문자열 존재 여부 판단.
+        let result;
+        result = str.indexOf("s");
+        console.log(result);
+        result = str.indexOf("q");
+        console.log(result); 
+        // -1은 일치하는 문자가 없다는 뜻. if문으로 -1 보다 큰지 아닌지 확인하여 문자가 있는지 체크 할수 있음.
+
+        result = str.indexOf("java");
+        console.log(result); //일치하는 문자열의 경우 문자열의 첫번째 인덱스반환
+        
+        str = "사과 호랑이 토끼 참외 포도";
+        
+        
+        /*
+        str문자열에 토끼가 존재하는 경우 콘솔에 "토끼 있습니다."를 출력하세요.
+        */
+        
+        result = str.indexOf("토끼");
+        console.log(result);
+        if(result > 0){
+            console.log("토끼가 있습니다.");
+        }
+        
+        /*
+        입력한 문자열에 javascript가 포함되어 있는 경우
+        "javascript가 포함된 문자열입니다" 출력하세요.
+        */
+
+        // let value = prompt("문자열을 입력하세요.");
+
+        // result = value.indexOf("javascript");
+        // console.log(result);
+        // if(result  == 0){
+        //     console.log('javascript가 포함된 문자열입니다');
+        // }
+
+
+        //주민번호 앞자리 제거 및 휴대폰 번호의 불필요한 숫자 제거할 때 사용
+        //substr(시작인덱스[,길이] : 시작인덱스부터 길이만큼 문자열 범위 반환)
+        str = "hello,javascript";
+        result = str.substr(6,3);
+        console.log(result);
+        console.log(str);
+
+        //substring(시작인덱스, 종료인덱스) : 시작인덱스부터 종료인덱스 앞까지 문자열 범위반환
+        result = str.substring(6,9);
+        console.log(result);
+        console.log(str);
+
+
+        let jumin = "240509-1111111";
+
+        /*
+            substr 또는 substring을 사용하여 위 jumin 번호의
+            생년월일 정보를 추출하여 콘솔에 출력하세요.
+        */
+        
+        result = jumin.substr(0, 6);
+        console.log(result);
+
+        result = jumin.substring(0, 6);
+        console.log(result);
+
+
+        //split(구분자문자열) : 대상 문자열 에서 구분자문자열을 기준으로 잘라 배열 생성
+        str = "html-css-javascript-java-mysql-react-spring";
+
+        result = str.split("-");
+        console.log(str);
+        console.log(result);
+
+        str = "id=tester&password=1234&name=홍길동&phone=010-1111-1111";
+
+        /*
+        split을 활용하여 &를 구분자로 문자열을 잘라 배열 생성 후 콘솔에 출력하세요.
+        */
+
+        result = str.split("&");
+        console.log(str);
+        console.log(result);
+        
+        //trim() : 문자열의 앞뒤 공백 제거후 반환
+        
+        str = "                         문자열               ";
+        result = str.trim();
+        console.log(result);
+        console.log(str);
+        
+
+        //replace(대상문자열, 치환문자열) : 문자열에서 대상문자열을 치환문자열로 교환후 반환
+
+        str = "javascript study!!";
+
+        result = str.replace("a","*"); //일치하는 문자열 앞에서 하나만 치환
+        result1 = str.replaceAll("a","*"); //일치하는 모든 문자열 전부 치환
+        console.log(str);
+        console.log(result);
+        console.log(result1);
+
+        //Math : 수학적 연산 기능을 제공하는 클레스(프로토타입)
+        //random() : 난수발생
+        //ceil() : 소수점 올림
+        //round() : 소수점 반올림
+        //floor() : 소수점 버림
+        
+        //원하는 범위의 난수 발생하기
+        //1~20까지의 난수 발생
+        result = Math.random()*20;
+        // result = Math.random(); // 0~1 까지의 실수를 난수로 발생
+        console.log(result);
+        
+        result = Math.floor(result); //소수점 버리기
+        console.log(result);
+
+        result = result + 1; 
+        console.log(result);
+
+        result = Math.floor(Math.random()*20) + 1; //위의 식 한번에 작성
+        console.log(result);
+
+        result = Math.floor(Math.random()*21);
+        console.log(result);
+
+    </script>
+</body>
+</html>

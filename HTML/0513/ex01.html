@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div>
+            <h3>DOM 트리 관련 프로퍼티</h3>
+            <ul>
+                <li>부모요소 찾기
+                    <div id="findparent">
+                        parentElement 를 이용하면 기존 부모를 알 수 있다.
+                    </div>
+                </li>
+                <li>첫번째 자식요소 찾기
+                    <div>firstElementChild 를 사용하면 첫번째 자식을 알 수 있다.</div>
+                </li>
+                <li>마지막 자식요소 찾기
+                    <div>lastElementChild 를 사용하면 마지막 자식을 알 수 있다.</div>
+                </li>
+
+            </ul>
+        </div>
+    <script>
+        let parent;
+
+        //웹 페이지에서 id가 findparent 를 찾기
+        parent = document.getElementById("findparent").parentElement; //ll
+        //부모 요소 찾기
+        console.log(parent);
+
+        parent = parent.parentElement; //ul
+        let firstChild = parent.firstElementChild; // 첫번째 li 태그
+        console.log(firstChild);
+
+        console.log("==========================");
+
+        let lastChild = parent.lastElementChild;
+        console.log(lastChild);
+
+        console.log(parent.childElementCount); //자식요소의 갯수 확인
+
+        let nextSiBling = firstChild.nextElementSibling; //기준 바로 옆에 선언된 동생 요소 찾기
+        console.log(nextSiBling);
+
+        let prviousSibling = nextSiBling.previousElementSibling; //기준요소의 바로 위 형을 찾는 프로퍼티
+        console.log(prviousSibling);
+
+
+    </script>
+
+    <table border="1">
+        <tr>
+            <td>1_1</td>
+            <td id="here">1_2</td>
+            <td>1_3</td>
+        </tr>
+        <tr>
+            <td>2_1</td>
+            <td id="here2">2_2</td>
+            <td>2_3</td>
+        </tr>
+    </table>
+    <script>
+        //아이디 here를 기준으로 첫번째 tr을 찾아 배경 분홍색을 적용하세요. 
+        //dom객체.style.backgroundColor = "pink" //요소에 분홍색 배경 적용
+
+        let here = document.getElementById("here");
+        console.log(here);
+
+        console.log("-----------here first---------------------------------");
+        let hereFirst = here.parentElement;
+        console.log(hereFirst);
+
+        hereFirst.style.backgroundColor = "pink";
+
+        //아이디가 here2인 요소를 기준으로 두번째 tr을 찾아 배경 회색적용하세요.
+
+        let here2 = document.getElementById("here2");
+
+        let parents = here2.parentElement;
+
+        parents.style.backgroundColor = "gray";
+
+
+        //here를 기준으로 첫행의 첫셀을 찾아 글자색 파란색으로 변경하세요.
+
+        let previousElementSiblingtd = here.previousElementSibling.style.backgroundColor = "blue";
+
+
+        console.log(previousElementSiblingtd);
+        console.log(hereFirst);
+        hereFirst.firstElementChild.style.color = "yellow";
+
+        
+
+
+        //here를 기준으로 2행의 3번째 행을 찾아 글자색 하얀색으로 적용하세요 2-3
+
+        
+        let her1 = hereFirst.nextElementSibling.lastElementChild.style.color = "white";
+
+        console.log(her1);
+
+    
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div01">div id=div01</div>
+    <div class="class01">div class=class01</div>
+    <div>div</div>
+    <p class="class01">p class="class05"</p>
+    <p>p</p>
+    <div id="div02">
+        <div id="child">div02의 자식요소 id child</div>
+    </div>
+    <div id="div03">
+        <div id="child">div03의 자식요소 id child</div>
+    </div>
+
+    <div>-----------------------------------------------------</div>
+    <div class="box">div class="box"</div>
+    <div class="box">div class="box"</div><!--배경 노란색-->
+    <div class="box">div class="box"</div>
+
+
+    <script>
+        //자바스크립트 dom 객체 검색 방법
+        // - document 객체를 기준으로 찾을 수 있다.
+        // - dom 객체를 기준으로 찾을 수 있다. (class,tagName 으로만 가능 id이름으로 불가)
+        // - id속성, 태그이름, class속성 css 선택자
+
+        //1. id속성으로 찾기
+        //.getElementById("아이디값 "); : 일치하는아이디 최초 한 객체만 반환
+        // let element = document.getElementById("div01");
+        // console.log(element);
+
+        // let div03 = document.getElementById("div03");
+        // let child = div03.getElementById("child");
+        // console.log(child);
+
+
+        //2.클래스 속성으로 찾기 (일치하는 요소가 하나이더라도 배열로 반환)
+        let class01s = document.getElementsByClassName("class01");
+        console.log(class01s);
+        //p 태그인 즉 2번째 class01요소 찾기
+        console.log(class01s[1]);
+
+        //box클래스들 중 두번째 요소 찾아 배경 노란색
+        let classes = document.getElementsByClassName("box")[1].style.backgroundColor = "yellow";
+
+        /*
+        클래스 속성값으로 요소를 검색하는 경우 무조건 배열로 반환하므로
+        dom 프로퍼티 또는 메소드를 사용하기 위해서는 먼저 인덱스에 접근해야한다.        
+        */
+
+        //3.태그 이름으로 요소 검색(.getElementsTagName("태그명"))
+        let ptags = document.getElementsByTagName("p");
+        console.log(ptags);
+
+        //검색된 모든 p태그들에게 글자색 빨간색 적용
+        for(let i = 0; i<ptags.length; i++){
+            ptags[i].style.color = "red";
+        
+            /*
+            배열로 반환된 돔 객체들은 반드시 인덱스를 사용하여
+            원소에 (dom객체)에 접근해야 dom 객체 프로퍼티, 메소드를 사용할 수 있다.
+            */
+        }
+        
+        //4.css 셀렉터를 사용하여 검색(.querySelector("css선택자"))
+        //4_1.셀렉터와 일치하는 요소 하나 찾기
+        console.log(document.querySelector(".class01"));
+        //클래스 속성값이 class01인 요소 최초 한개만 찾기
+
+        //4_2.셀렉터와 일치하는 모든 요소 찾기
+        console.log(document.querySelectorAll(".class01"));
+        //클래스 속성값이 class01인 모든 요소 배열로 찾기
+
+        //*1번. id가 div01인 요소 하나만 querySelector 메소드를 사용하여
+        //찾아 콘솔에 출력하세요.
+
+        //*2번. class가 box인 모든 요소를 querySelecotrAll 메소드를
+        //사용하여 콘솔에 쿨력하세요.
+
+        console.log("---------------------------------------------");
+        console.log(document.querySelector("#div01"));
+
+        console.log(document.querySelectorAll(".box"));
+
+        
+
+
+
+    </script>
+</body>
+</html>

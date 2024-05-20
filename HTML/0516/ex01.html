@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 50px;
+            background-color: yellow;
+            margin: 20px 20px;
+        }
+
+        .parent {
+            width : 100px;
+            height : 50px;
+            background-color: skyblue;
+            padding : 30px;
+            margin: 20px;
+        }
+    </style>
+    <script>
+        /*
+        mouseover와 mouseout 이벤트 리스너는
+        자식 요소에게 이벤트가 상속되어 자식 요소에서 발생할 때
+        부모의 이벤트 리스너를 실행시킨다.
+        */
+        function downfn(obj, e){
+
+            obj.style.backgroundColor = "orange";
+            let button = e.button;
+            switch(button){
+                case 0 :
+                    button = "왼쪽 버튼";
+                    break;
+                case 1 :
+                    button = "가운데버튼";
+                    break;
+                case 2 :
+                    button = "오른쪽 버튼";
+                    break;
+                default:
+            }
+            obj.innerHTML = "<b>" + button +"</b>";
+
+        }
+        function upfn(obj, e){
+
+            obj.style.backgroundColor = "yellow";
+            obj.innerHTML = "";
+
+        }
+        let outcnt = 0;
+        function outfn(obj, e){
+            outcnt++;
+            obj.nextElementSibling.nextElementSibling.innerHTML = "out 횟수는 <b>" + outcnt + "</b>!!";
+        }
+        let overcnt = 0;
+        function overfn(obj, e){
+            overcnt++;
+            obj.nextElementSibling.innerHTML = "over 횟수는 <b>"+ overcnt +"</b>!!";
+
+        }
+    </script>
+</head>
+<body oncontextmenu="return false">
+    <div class="box" id="down" onmousedown="downfn(this,event)" onmouseup="upfn(this,event)"></div>
+    <div class="parent" onmouseover="overfn(this,event)" onmouseout="outfn(this,event)">
+        <div class="box"></div>
+    </div>
+    <div></div><!-- over cnt-->
+    <div></div><!-- out cnt-->
+
+
+
+    <div class="parent" stlye="margin-top:10px" onmouseenter="enterfn(this,event)" onmouseleave="leavefn(this,event)">
+        <div class="box"></div>
+        
+    </div>
+    
+    <div></div><!-- enter cnt-->
+    <div></div><!-- leave cnt-->
+    <script>
+        let entercnt = 0;
+        function enterfn(obj, e){
+            entercnt++;
+            obj.nextElementSibling.innerHTML = "enter 횟수는 <b>" + entercnt +"</b>!!";
+        }
+
+        let leavecnt = 0;
+        function leavefn(obj, e){
+            leavecnt++;
+            obj.nextElementSibling.nextElementSibling.innerHTML = "leave 횟수는 <b>" + leavecnt + "<b>!!";
+        }
+    </script>
+
+    <div class="box" onwheel="wheelfn(this,event)"></div>
+    <script>
+        function wheelfn(obj, e){
+            //alert("휠 이벤트 발생"+ e.wheelDelta);
+            let class01s = document.getElementsByClassName("box");
+            console.log(class01s);
+            if(e.wheelDelta > 0){ //위로 굴렸다.
+                //요소 배경 주황색
+                class01s[3].style.backgroundColor = "orange";
+            }else{ //아래로 굴렸다.
+                //요소 배경 초록색
+                class01s[3].style.backgroundColor = "green";
+            }
+        }
+    </script>
+</body>
+</html>

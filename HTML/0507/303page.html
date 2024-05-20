@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>별 문자 출력하기</h3>
+  <hr>
+  <script>
+    function printStar(cnt){
+      cnt = Number(cnt);
+      if(!isNaN(cnt)){
+        let star="";
+        for(let i=1; i<=cnt; i++){
+          star += '*';
+          document.write(star+"<br>");
+        }
+      }else{
+        document.write("입력 오류 입니다.");
+      }
+    }
+    let count= prompt("정수를 입력하세요.");
+    printStar(count);
+    //printStart를 책의 실행 결과처럼 실행될 수 있도록
+    //정의해보세요.
+  </script>
+</body>
+</html>

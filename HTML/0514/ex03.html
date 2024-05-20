@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <tr>
+                <td onclick="this.style.backgroundColor='yellow'">click</td>
+                <td ondblclick="this.style.backgroundColor='yellowgreen'">dbclick</td>
+                <td onclick="this.style.backgroundColor='yellow'">click</td>
+            </tr>
+            <tr>
+                <td onclick="changeBack(this)" >click</td><!--이 셀을 클릭하면 배경을 분홍색과 하얀색을 번갈아가면서 적용-->
+                <td>dbclick</td>
+                <td>click</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function changeBack(tdobj){
+            if(tdobj.style.backgroundColor == "white"){
+                tdobj.style.backgroundColor="pink";
+            }else{
+                tdobj.style.backgroundColor="white";
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

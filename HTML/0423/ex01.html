@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스모델 다루기</title>
+    <style>
+        /* max-width의 크기 이상 커지지 않게 제어 
+           min-width의 크기 이상 작아지지 않게 제어*/
+        /* vh 현재 브라우저 기준으로 높이 지정 width100%는 작동하지 않음 px는 정상작동*/
+        /* vw 현재 브라우저 기준으로 넓이 지정*/
+        #content {background-color: yellow; width:80%; height: 50vh; min-width: 200px;}
+        #border {width:400px; height:50px; background-color: orange;}
+        /*#border {border-color :red; border-width: 2px; border-style: solid;}*/
+        #border {border: 2px red solid;}
+        #border {border: 2px red dashed;}
+        #border {border: 2px red dotted;}
+        #border {border: 2px red double;}
+        #border {border: 2px red none;} /*none은 기본값*/
+
+        #padding,#padding2,#padding3 {border:2px solid black; width: 100px; background-color: skyblue;}
+        #padding {padding-top:20px; padding-bottom: 20px; padding-left:20px; padding-right:20px;}
+        /* 위 오른쪽 아래 왼쪽 순*/
+        #padding {padding: 20px 20px 20px 20px;}
+        /*사면이 같을 경우 하나로도 가능*/
+        #padding {padding: 20px;}
+
+        #padding2 {
+            padding-top:20px;
+            padding-right:30px;
+            padding-bottom:10px;
+            padding-left: 30px;
+        }
+
+        #padding2 {padding: 20px 30px 10px;} /*패딩의 위아래수치가 다르고 좌우 수치가 같은 경우 */
+
+        #padding3 {
+            padding-top: 10px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+            padding-left: 20px;;
+        }
+
+        #padding3 {padding:10px 20px;}/*패딩의 위아래와 좌우 여백이 같은 경우*/
+        
+        #mission {
+                border-top:2px solid black;
+                border-bottom: 2px solid black; 
+                width:80px; 
+                padding-top:20px 0px; 
+                background-color:pink;}
+        
+        .box { 
+            width:400px;
+            height: 50px; 
+            background-color: lightblue;
+            border: 1px solid black;
+        }
+        
+        h3 { margin-top: 0px;}
+
+        .margin2 {
+            margin-top:20px;
+        }
+
+        body {margin:0px;}
+        
+        .margin3 { margin:auto;/*남는 여백을 좌우 균등하게 요소 배치*/}
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: lime;
+            margin: 20px;
+            
+        }
+        .radius1{
+            /*border-top-left-radius: 20px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;*/
+            border-radius: 20px 10px;
+        }
+        
+        .radius2{
+            /*border-top-left-radius: 10px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 30px;
+            border-bottom-left-radius: 20px;*/
+
+            border-radius: 10px 20px 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- 인라인 성질을 가지고 있으면 넓이와 높이를 줄 수 없음-->
+    <h3>박스모델_컨텐츠 박스</h3>
+    <div id="content"></div>
+    <h3 style="border-top:3px dashed black; padding-top:10px;">박스모델_테두리 박스</h3>
+    <div id="border"></div>
+    <h3 style="border-top:3px dashed black; padding-top:10px;">박스모델_패딩 박스</h3>
+    <div id="padding">패딩예제박스</div>
+    <div id="padding2">패딩예제박스</div>
+    <div id="padding3">패딩예제박스</div>  
+
+
+    <div id="mission">미션박스</div>
+    <h3 style="border-top:3px dashed black; padding-top:10px;">박스모델_마진박스</h3>
+    <div class="margin1 box"></div>
+    <div class="margin2 box"></div>
+    <div class="margin3 box"></div>
+
+    <h3>박스모델_둥근모서리</h3>
+    <div class="radius1 box2"></div>
+    <div class="radius2 box2"></div>
+
+</body>
+</html>

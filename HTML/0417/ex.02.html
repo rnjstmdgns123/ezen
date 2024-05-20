@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라디오 버튼과 체크박스 예제</title>
+</head>
+<body>
+    <header>
+        <h1>라디오 버튼과 체크박스 다루기</h1>
+    </header>
+    <hr>
+    <section>
+       <h2>라디오 버튼 예제</h2>
+        <article>.
+            - name 속성이 같으면 한 그룹의 라디오 버튼으로 생성 된다.<br>
+            - 한 그룹의 버튼들은 그들 중 하나만 선택할 수 있다.<br>
+            - 라디오 버튼 옆의 텍스가 아니라 value 속성값이 제출시 전송된다.<br>
+            <form name="frm" action="#" method="get">
+                <!-- 라디오 버튼에서 값을 넘기려면 value를 사용-->
+                <label><input type="radio" name="r1" value="btn1">버튼1</label>
+                <input type="radio" name="r1" value="btn2">버튼2
+                <input type="radio" name="r1" value="btn3">버튼3
+                <br>
+                <input type="submit">
+            </form>
+        </article>
+        <hr>
+        <h2>체크 박스 예제</h2>
+        <article>
+            <form name="frm" action="#" method="get">
+                과일:
+                <input type="checkbox" name="fruit" value="apple">사과
+                <input type="checkbox" name="fruit" value="banana" checked>바나나
+                <input type="checkbox" name="fruit" value="mango">망고
+                <br>
+                프로그래밍 언어:
+                <input type="checkbox" name="programmingL" value="html">html
+                <input type="checkbox" name="programmingL" value="css">css
+                <input type="checkbox" name="programmingL" value="javascript">javascript
+                <br>
+                <input type="submit">
+            </form>
+        </article>
+        <hr>
+        <h2>먹고 싶은 것 모두 체크하세요</h2>
+        <hr>
+        <article>
+            <form name="eat" action="#" method="get">
+                <input type="checkbox" value="1" name="food" id="t2"><label for="t2">짜장면
+                <img src="D:\workspace\01.html\0417\jajang.png"></label><br>
+                <input type="checkbox" value="1" name="food" id="t3"><label for="t3">짬뽕
+                <img src=".\jjambbong.png"></label><br>
+                <label for="t4">탕수육<input type="checkbox" value="1" name="food" id="t4">
+                <img src=".\tangsuyuk.png"></label><br>
+            </form>
+        </article>
+        <hr>
+        <h2>펼침목록 양식 예제</h2>
+        <article>
+            - option 태그는 시작태그 종료태그가 존재하며 이때 option 태그에
+            value 속성 생략시 시작태그 종료태그 사이 값이 제출된다.
+            <form name="frm3" action="#" method="get">
+                <select name="sel1" size="3" multiple>
+                    <option value="f001">사과</option>
+                    <option value="f002">바나나</option>
+                    <option value="f003" selected>망고</option>
+                    <option value="f003">딸기</option>
+                </select>
+                <br>
+                <input type="submit">
+            </form>
+            <div>
+                <input type="text" id="t1">
+            </div>
+            <div>
+                <label for="t1"><span>text</span></label>
+                이 텍스트는 라벨이 아닙니다.
+            </div>
+        </article>
+        <br><br>
+        <form>
+            <label>사용자ID : <input type="text" size="15" value=""></label><br>
+            <label for="pass">비밀번호 : </label>
+            <input id="pass" type="password" size="15" value="">
+            <input type="submit" value="완료">
+        </form>
+        <hr>
+        <h2>시간 입력 양식 예제</h2>
+        <article>
+            <input type="month"><!-- 년도와 월을 선택하는 입력양식-->
+            <input type="week"><!-- 년도와 해당년도의 몇번째 주인지 선택 양식-->
+            <input type="date" min="2024-01-01" max="2024-04-17"><!-- min 속성은 최소 max는 최대 날짜 예약설정할때 주로 사용 ***-->
+            <input type="time"><!-- 시와 분까지 가능 초는 안됨-->
+            <input type="datetime-local"><!--년,월,일,시,분 선택 양식-->
+        </article>
+        <hr>
+        <h2>숫자 입력 양식 에제</h2>
+        <article>
+            <form>
+            <input type="number" min="5" max="10">
+            <br>
+            <input type="submit">
+            </form>
+        </article>
+    </section>
+</body>
+</html>

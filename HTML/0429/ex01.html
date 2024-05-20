@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        alert("클릭");
+        
+
+        //본문이 그려지기 전에 먼저 실행된다.
+        //자바스크립트 영역
+        console.log(document.getElementsByTagName("div")[0]);
+    </script>    
+    
+</head>
+<body>
+    <div onclick="alert('클릭했습니다.');">
+        클릭하면 메시지창이 실행됩니다.
+        <!-- 특정 태그의 이벤트 리스너 속성에 대한 속성 값으로 자바스크립트를 사용할 수 있다.-->
+    </div>
+    <script>
+        //자바스크립트 영역
+        console.log(document.getElementsByTagName("div")[0]);
+        /*
+         script 태그가 body 태그 안에 존재하는 경우 정적 위치에서 실행한다. 
+         */
+    </script>
+    <h3>마우스 올려 보세요.</h3>
+    <img src="../apple1.jpg" alt="이미지" onmouseover="this.src='../banana2.jpg'" onmouseout="this.src='../apple1.jpg'">
+    <!--
+        script 태그의 가장 안전한 위치는
+        body 태그맨 아래쪽이다.
+    -->
+    <script src="ex01_javascript.js"></script>
+    <a href="javascript:console.log('링크클릭!')">클릭하세요!</a>
+</body>
+</html>

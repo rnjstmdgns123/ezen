@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        자바스크립트는 인터프리터 언어이므로
+        실행문이 한줄에 하나밖에 없는 경우에는
+        세미콜론을 생략할 수 있다.
+        한줄에 여러 실행문이 존재하는 경우에는 
+        실행문 끝에 반드시 세미콜론을 붙여야한다.
+        */
+        /*
+        1.자바스크립트는 변수에 대한 데이터타입을 명시하지 않는다.
+        2.변수에 데이터가 담기는 순간 데이터 타입이 결정된다.
+        3.변수에는 모든 데이터타입 값을 대입할 수 있다.
+        */
+
+        var val01; // undefined(변수 초기 선언시에는 undefined 데이터 타입을 갖는다.)
+        console.log(typeof val01);
+        val01 = 10; // number
+        console.log(typeof val01);
+        val01 = true; //boolean
+        console.log(typeof val01);
+
+        let val02;
+        console.log(typeof val02);
+        val02 = 10;
+        console.log(typeof val02);
+        val02 = "hello";
+        console.log(val02);
+        console.log(typeof val02);
+
+        //1. 변수명을 동일하게 선언하더라도 오류가 발생 x
+        var val01 = "다시 선언";
+        console.log(val01);
+
+        //2. var 키워드를 생략하고 변수를 선언 할 수 있다.
+        val03 = 20;
+        if(true){
+            console.log(val03);
+            var val04 = "if에서 선언된 val04"; //전역변수
+            /*
+            var 키워드로 선언된 변수는 함수 (function 키워드)내에서
+            선언된 변수가 아니면 전부 전역변수가 된다.
+            */
+        }
+        console.log(val04);
+        
+        function fun01(){
+            //지역 변수 영역
+            console.log(val04); //전역변수는 script 모든 곳에서 사용할 수 있다.
+            var val05 ="지역변수 val05";
+            console.log(val05); //지역변수는 자신의 지역에서는 사용할 수 있다.
+            }
+
+
+        fun01();
+        //console.log(val05); // 지역변수는 자신의 지역을 벗어나서 사용할 수 없다.
+
+        //3. var 키워드로 선언된 변수는 지역, 전역변수만 구분된다. (블록변수는 구분하지 않음)
+        
+        // let키워드로 변수 선언시 주의사항!!
+        // 1.변수명을 충복해서 선언 할 수 없다.
+        // let val02 = 30;
+        // 2. 키워드 생략하고 변수를 선언하는 경우에는 무조건
+        // var 키워드로 선언한 변수가 된다.
+        // 3. 지역, 전역, 블럭,영역을 전부 구분한다.
+        let deta01 = "전역 let 변수";
+        if(true){
+            let data01 = "if문 안의 let 변수";
+            console.log(data01);
+            /*
+            var 키워드를 사용하여 변수를 중복 선언하는 경우는
+            한 그릇을 공유한다.
+            블럭을 구분 지으면 같은 변수명을 let 키워드를 사용하여
+            선언 할 수 있으나 저장공간(그릇)은 구분되어 진다.
+            */
+            let data02 ="블럭변수 data02";
+            let data03 ="블럭변수 data03";
+        }
+
+        //console.log(data02);
+        //console.log(data03);
+
+        // const 키워드로 선언된 변수는 상수이다!!
+        // 사용방법은 let과 동일하지만 한번 값이 초기화 되면
+        // 값을 변경할 수 없다.
+
+        const con01 = "초기값";
+        
+
+    </script>
+</body>
+</html>

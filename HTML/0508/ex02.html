@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+        자바스크립트에서 함수를 선언하는 방법.
+        1. 이름이 존재하는 일반함수 (function 함수명(매개변수){실행문});
+        2. 이름이 없는 무명함수 (function(매개변수){실행문})
+        - 무명함수는 변수에 대입하여 선언한다.
+        - 호출 역시 대입된 변수의 이름을 함수이름처럼 호출하여 사용한다.
+    
+    */
+
+    let fn1 = function(){
+        console.log("무명함수 호출!");
+    }
+
+    fn1(); //무명함수 호출
+
+
+    fn2();
+    function fn2(){
+        console.log("일반함수 호출");
+    }
+    /*
+    <자바스크립트 함수 선언 및 호출시 주의 사항>
+    1. 함수명은 중복선언 할 수 있다.
+    - 호출은 맨마지막에 선언된 함수가 무조건 호출된다.
+    -무명함수를 대입하고 있는 변수명은 재사용할 수 없다.
+    */
+    function fn2(){
+        console.log("두번째 fn1!!");
+    }
+    fn2();
+
+    /*
+    2. 매개변수의 데이터타입이 없기 떄문에
+        모든 매개값 타입이 대입될 수 있다.
+    */
+   function sample(a){console.log(typeof a);}
+   sample("a");
+   sample(1);
+   sample(true);
+
+   /*
+   3. 매개변수보다 매개값이 부족하게 함수를 호출할 수 있다.
+        -남은 매개변수의 데이터타입은 undefined 이다.
+   */
+
+    function sample2(a,b,c){console.log(typeof c);}
+    sample2(1,2);
+
+    
+   /*
+   4. 매개변수가 매개값보다 부족한 경우 남는 매개값은 버린다.
+   */
+
+   function sample3(a,b){console.log(a + "," + b)};
+   sample3(1,2,3,4,5);
+
+
+    </script>
+</body>
+</html>

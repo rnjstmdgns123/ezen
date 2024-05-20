@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>자바스크립트의 반복문을 사용하여 같은 화면이 출력되도록 작성하세요.</h3>
+    <script>
+        document.write('<table border="1" style="width:600px">');
+        document.write("<tr>");
+        document.write("<td>");
+        
+        document.write("<table border='1'")
+        for(let star = 1; star<=3; star++){
+            document.write("<tr>");
+            document.write("<td>*");
+            document.write("</td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+
+        document.write("</td>");
+        document.write("<td>");
+
+        for(let cnt = 1; cnt <=5; cnt++){
+            for(let cnn = 5; cnn >= cnt; cnn--){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        document.write("</td>");
+        document.write("<td>");
+        document.write("<ul>");
+        document.write("</ul>");
+        for(let lank = 1; lank <= 3; lank++){
+            document.write("<li><a href='#'>링크" + lank +"</a>");
+            document.write("</li>");    
+        }
+        document.write("</td>");
+        document.write("</tr>");
+
+        document.write("</table>");
+
+
+    </script>
+</body>
+</html>

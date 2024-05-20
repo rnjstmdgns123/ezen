@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe 예제 페이지 입니다.</title>
+</head>
+<body>
+    <h2>base.html 삽입하기</h2>
+    <iframe src="base.html" width="200" height="200">웹페이지 출력되지 못할경우 대체 텍스트</iframe>
+    <iframe srcdoc="<html>test</html>" height="200">웹페이지 출력되지 못할경우 대체 텍스트</iframe>
+    <!-- srcdoc 속성은 속성값을 html 구조로 iframe에 출력합니다.-->
+    <br>
+    <br>
+    <a href="list.html" target="i3">클리시 아래 아이프레임에서 list.html로 이동합니다.</a>
+    <br>
+    <iframe name="i3" src="base.html" width="500" height="300">웹 페이지 출력되지 못할경우 </iframe>
+</body>
+</html>

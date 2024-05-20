@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            while문 : for문과 다르게 반복의 조건은 알지만
+                      반복의 횟수는 모르는 경우 사용하는 
+                      반복문이다.
+                      주로 반복마다 반복을 종료 할 것인가
+                      여부를 물어볼때 사용하는 제어문이다.
+        
+        */
+        let flag = true; //반복에 사용할 스위치 역할 변수
+
+        while(flag){
+            //flag 변수를 사용하는 경우 while 안에서
+            //반드시 flag 변수가 false가 되는 실행문을
+            //작성해줘야 무한루프에 빠지지 않는다.
+
+            let value = prompt("텍스트를 입력하세요.");
+
+            if(value == '종료'){
+                flag = false;
+            }else{
+                document.write("입력값 : " + value + "<br>");
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

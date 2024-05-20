@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <!-- CDN 방식-->
+    <!--<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>-->
+    <script>
+        /*
+            
+        
+        function loadfn(){
+            document.getElementById("div01").style.backgroundColor = "yellow";
+        }
+        
+        window.onload = loadfn;
+        */
+       /* 단축형
+       $(function(){
+
+       });
+       $ = jQuery, ready = onload, 함수
+       - 아이디 = #
+       - class = .
+       - 태그 이름 선택 가능
+       */
+        $(document).ready(function(){
+            //document.getElementById("div01").style.backgroundColor = "yellow";
+            $("#div01").css("background","yellow");
+            /*
+            아이디 선택자로 요소를 찾는 경우 제일 첫번쨰로 선언된
+            한개의 요소만 검색한다.(단일요소)
+            */
+        });
+
+
+    </script>
+</head>
+<body>
+    <div id="div01" >div01입니다.</div>
+    <div id="div02" >div02입니다.</div>
+    <div id="div02" >div01입니다.</div>
+    <script>
+        /*
+        외부 jQuery 플러그인들과 함께 사용하는 경우
+        body 안에있는 script에서 $(document).ready 메소드안에서 요소를 찾는 경우 인식하지 못하는 경우가 있으므로
+        body안에서 jQuery를 사용하는 경우에는  $(document).ready()를 선언하지 않고 사용하길 권장한다.
+        */
+        $(function(){
+            $("#div02").css("background","red");
+        });
+        
+    </script>
+
+    <div class="class01">class01 요소 입니다.</div>
+    <div class="class01">class01 요소 입니다.</div>
+    <div class="class01">class01 요소 입니다.</div>
+    <!-- 자바스크립트를 사용하여 class가 class01인 모든 요소의 배경을 주황색으로 변경하세요.-->
+    <script>
+
+        
+            // let cls = document.getElementsByClassName("class01");
+            
+            // for (let i = 0; i < cls.length; i++){
+            //     cls[i].style.background = "orange";
+                
+            // }
+        
+            $(".class01").css("background","orange");
+            /*
+            클래스 class01인 모든 요소를 찾아 배경 주황색
+            제이쿼리에서는 다중요소 검색시 호출된 메소드가 일괄 처리된다
+            */
+
+
+    </script>
+
+    <div data="html">html</div>
+    <div data="css">css</div>
+    <div data="javascript">javascript</div>
+    <div data="jquery">jquery</div>
+    <script>
+        /*div들 중에 data라는 속성을 가지고 있는 요소들에게 글자 하얀색*/
+        //$("선택자") : 선택자를 jQuery 객체로 변환함.
+        $("div[data]").css("color","white");
+        //div 중에 data 속성 값이 jquery인 요소를 찾아 배경 빨간색으로 적용
+        $("div[data=jquery]").css("backgroundColor","red");
+
+        //div중 data 속성 값이 javascript인 요소를 찾아 배경 파란색으로 적용
+        $("div[data=javascript]").css("backgroundColor","blue");
+
+
+    </script>
+
+    <input class="filter01" type="text"><br>
+    <input class="filter01" type="password"><br>
+    <script>
+        $(".filter01:text").css("background","orange");
+        $(".filter01:password").css("background","yellow");
+
+    </script>
+
+    <input type="checkbox" name="check01" onchange="checkfn()"><span>check01</span>
+    <input type="checkbox" name="check01" onchange="checkfn()"><span>check02</span>
+    <input type="checkbox" name="check01" onchange="checkfn()" checked  ><span>check03</span>
+    <br>
+    <script>
+        //.next() : nextElementSibling 프로퍼티 역할
+        $("input:checked").next("span").css("background","red");
+        function checkfn(){
+        $("input:checkbox").next("span").css("background","white");
+        $("input:checked").next("span").css("background","skyblue");
+        }
+        $("input:checkbox").next("span").css("color","purple");
+    </script>
+    <input type="file">
+    <input type="hidden" value="hiddenData"><br>
+    <select id="sel" onchange="selectfn()">
+        <option value="sel001" >항목1</option>
+        <option value="sel002" >항목2</option>
+        <option value="sel003" selected>항목3</option>
+    </select>
+    <script>
+        //alert($("#sel>option:selected").val());
+        /*
+        select 요소의 선택 항목이 바뀔때마다 선택된 항목 value 값을 alert으로 실행할 수 있게 코딩하세요.
+        
+       function selectfn(){
+        alert($("#sel>option:selected").val());
+       }
+       */
+       
+    </script>
+    <br>
+    <input type="text" id="disabledText" disabled><br>
+    <input type="text" id="enabledText" enabled>
+    <script>
+        //input 태그 중에 비활성화 요소 조회
+        $("input:disabled").css("border","2px solid red");
+        //아이디가 enabledText 중 활성화 요소 조회
+        $("#enabledText:enabled").css("border","2px solid yellowgreen");
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new Object()로 사용자 객체 만들기</title>
+
+    <script>
+
+        function inquiry(){ //잔금조회
+            return this.balance;
+        }
+
+        function deposit(money){
+            this.balance += money; // money 만큼 저금
+        }
+        function withdraw(money){
+            this.balance -= money; // money 만큼 balance에서 인출함. money는 balance 보다는 작아야됨
+            return money;
+        }
+
+
+
+        //사용자 객체 만들기 (new Object()활용 )
+        let account = new Object(); //빈 껍대기
+
+        account.owner = "황기태"; //필드 생성 및 초기화
+        account.code = "111"; //코드 프로퍼티 생성 및 초기화
+        account.balance = 35000;
+        account.inquiry = inquiry; // 메소드 작성
+        account.deposit = deposit; // 메소드 작성
+        account.withdraw = withdraw; // 메소드 작성
+
+        document.write("account : " + account.owner + "," + account.code +","+ account.balance+"<br>" );
+
+        account.deposit(20000);
+        document.write("20000원 저금 후 잔액은" + account.inquiry() + "원<br>");
+
+        account.withdraw(30000);
+        document.write("30000원 인출 후 잔액은 " + account.inquiry() + "원<br>");
+
+
+        document.write("----------------------------------------------<br>");
+
+        //리터널 표기법으로 객체 만들기
+        
+        let accout = {
+            //프로퍼티 생성 및 초기화 (,) 콤마로 구분
+            onwer : "황기태",
+            code : "111",
+            balance : 35000,
+
+            //메소드 작성
+            inquiry : function(){
+                return this.balance;
+            },
+
+            deposit : function(money){
+                this.balance += money;
+            },
+            withdraw : function (money){
+                this.balance -= money;
+                return money;
+            }
+        };
+
+
+
+    </script>
+</head>
+<body>
+    <script>
+        document.write("account :" + accout.onwer + "," + accout.code + "," +accout.balance + "<br>");
+        
+        account.deposit(10000); //10000원 저금
+        document.write("10000원 저금 후 잔액은" + account.inquiry() + "<br>");
+        account.withdraw(20000);
+        document.write("20000원 인출 후 잔액은" + account.inquiry() + "<br>");
+        document.write("----------------------------------------------------<br>");
+
+
+        function Bank(onwer, code, balance){
+            //프로퍼티 만들기
+            this.onwer = onwer;
+            this.code = code;
+            this.balance = balance;
+
+            this.inquiry = function(){
+                return this.money;
+            }
+            
+            this.deposit = function(money){
+                this.balance += money;
+            }
+
+            this.withdraw = function(money){
+                this.balance -= money;
+                return money;
+            }
+
+        }
+
+        let bank = new Bank("황기태","111",100000);
+
+        document.write("account :" + bank.onwer + "," + bank.code + "," + bank.balance +"<br>");
+        bank.deposit(10000);
+        
+        document.write("10000원 저금 후잔액은" + bank.inquiry() + "<br>");
+        bank.withdraw(30000);
+        document.write("30000원 인출 후 잔액은 " + bank.inquiry() + "<br>");
+
+
+
+
+    </script>
+</body>
+</html>

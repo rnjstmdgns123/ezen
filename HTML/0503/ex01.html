@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //반복문
+        //1.for문 : 반복의 횟수를 알고 있는 경우 특정 구간을 반복하는 제어문
+
+        /*
+        for( 초기화식; 조건식 ; 증감식){
+            //실행문들...
+        }
+        1.초기화식 : 반복에 사용할 카운트 변수 초기화
+        2.조건식 : 조건이 true인지 비교
+
+        3.조건식이 true인 경우 : 
+        4.실행문 실행
+        5.증감식 실행
+        2.조건식 비교 ->3->4->5 반복 (2번조건식이 false까지)
+
+        3.조건식이 false인 경우 : 반복 종료
+         조건식이 false인 경우 :
+        */
+        
+        for(let cnt = 0; cnt <= 4; cnt++){
+            document.write("a");
+            document.write("<br>");
+        }
+
+        for(let num = 1; num < 6; num++){
+            document.write(num);
+            document.write("<br>");
+        }
+
+        for(let h = 1; h <=6; h++){
+            document.write("<h"+ h + ">hello</h" + h + ">");
+        }
+
+
+        // for(let i = 0; i <= 10; i++){
+        //         for(let j = 0; j <= i; j++){
+        //             document.write("*");
+        //         }
+            
+        //     document.write("<br>");
+        // }
+        // for(let k = 9; k >= 0; k--){
+        //     for(let t = 0; t<=k; t++){
+        //         document.write("*");
+                
+        //     }
+        //     document.write("<br>");
+                
+        // }
+
+        for (let a = 0; a < 5; a++) 
+	    {
+		    for (let b=a; b <= 5-1; b++) {
+			    document.write("&nbsp");
+		    }
+		    for (let c = 0; c <=(a*2); c++) {
+			    document.write("*");
+		    }
+		    document.write("<br>");
+	}
+
+    document.write("<h3>for 문으로 10px~35px 크기 출력</h3><hr>");
+    
+    for(let size = 10; size <= 35; size+=5){
+        document.write("<span ");
+        document.write("style='font-size:" + size +"px'>");
+        document.write(size + "px");
+        document.write("</span>");
+            
+    }
+	
+
+
+
+    </script>
+</body>
+</html>

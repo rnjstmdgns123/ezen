@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function fn1(){
+            console.log("fn1함수 호출!");
+        }//선언
+
+        function fn2(a, b){ //자바크스립트에서는 매개변수 선언시 변수 키워드 생략
+            console.log("a : " + a);
+            console.log("b : " + b);
+        }
+
+        //자바스크립트에서 함수는 함수명이 같은경우
+        //맨 마지막 함수로 업데이트 된다.
+        function fn2(){
+            console.log("fn2 호출!!");
+        }
+
+        //자바스크립트의 매개변수는 호출할때마다 
+        //다른 데이터 타입을 허용한다.
+        fn2(1,2);
+        fn2(1,"2"); 
+        //매개값 전달시 매개변수 선언 갯수와 달라도 오류 x
+        //값이 부족한 매개변수는 undefined를 갖는다.
+        fn2(1); 
+        //넘치는 매개값은 버리고 받는다.
+        fn2(1,2,3,4,5,6);
+    </script>
+</head>
+<body>
+    <script>
+
+        fn1(); //호출
+        fn1();
+        fn1();
+
+        
+    </script>    
+</body>
+</html>
